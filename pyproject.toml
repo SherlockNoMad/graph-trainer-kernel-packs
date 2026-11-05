@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graph-trainer-kernel-packs"
+version = "0.1.0"
+description = "Verified kernel packs for torchtitan GraphTrainer, bitwise exact against the ops they replace"
+readme = "README.md"
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.10"
+# torch, torchtitan and nvidia-cutlass-dsl are not declared: each pack pins exact builds
+# (its manifest.json "target"), which a resolver cannot express or install.
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/SherlockNoMad/graph-trainer-kernel-packs"
+
+[tool.setuptools.packages.find]
+include = ["graph_trainer_kernel_packs*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+"*" = ["manifest.json", "README.md", "kernels/*/*", "verification/*"]
