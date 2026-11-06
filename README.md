@@ -8,6 +8,7 @@ with handwritten kernels that compute **bitwise identical** results, so loss and
 |---|---|---|---|---|
 | [`dsv3_671b_distmoe_mxfp8_fsdp256_ep64_sm103`](graph_trainer_kernel_packs/dsv3_671b_distmoe_mxfp8_fsdp256_ep64_sm103/README.md) | DeepSeek-V3 671B, DistMoE, MXFP8; FSDP 256 x EP 64 | GB300 | -13.8% (583.9 -> 503.4 ms, excluding fake-PG collectives) | bitwise identical |
 | [`gpt_oss_120b_mxfp8_fsdp64_ep16_sm103`](graph_trainer_kernel_packs/gpt_oss_120b_mxfp8_fsdp64_ep16_sm103/README.md) | GPT-OSS 120B, MXFP8 attention + lm_head; FSDP 64 x EP 16 | GB300 | 3.74x (2000.4 -> 534.7 ms per microbatch, excluding fake-PG collectives); 3.2x tokens/s (7,844 -> 25,092) | bitwise identical to the deterministic recipe |
+| [`qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103`](graph_trainer_kernel_packs/qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103/README.md) | Qwen3 30B-A3B, DistMoE, MXFP8; FSDP 8 x EP 8 | GB300 | -29.8% (967.9 -> 679.6 ms, excluding fake-PG collectives) | bitwise identical |
 
 ## Use
 
@@ -17,7 +18,8 @@ Requirements:
   which is not in `main` yet: branch [`agentic_compiler`](https://github.com/pytorch/torchtitan/tree/agentic_compiler)
   at `d89f7f53e` or later, where its cache keys are the same on every rank. The GPT-OSS pack needs `4f955c1c8`
   or later, where inputs with symbolic sizes (e.g. a token dispatcher's routed-row count) are keyed by their
-  description. A pack looks its kernels up with these keys, so a later change to them needs a regenerated pack.
+  description. The Qwen3 30B-A3B pack was built and validated at `8e8145923`. A pack looks its kernels up
+  with these keys, so a later change to them needs a regenerated pack.
 - The exact environment in the pack's `manifest.json` `target` (torch build, CUDA, GPU, cutlass-dsl).
 - The pack's recipe, or one that produces the same graph: same model config and parallelism, and
   `debug.deterministic = True`.
