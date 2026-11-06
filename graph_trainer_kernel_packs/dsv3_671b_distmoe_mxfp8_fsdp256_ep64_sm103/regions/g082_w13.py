@@ -7,7 +7,7 @@ the matchers below find 183 site(s); the finder reported 58 instance(s).
 Lifted by the pack's graph pass, in the order of ``PLAN`` in ``__init__.py``.
 """
 
-from graph_trainer_kernel_packs.lifting import is_op, N, user_of
+from graph_trainer_kernel_packs.lifting import is_op, N, S, user_of
 
 REGION_ID = "G-082"
 
@@ -30,8 +30,8 @@ def match_v0(n0):
     if not is_op(n3, '_operator.getitem', [N, 0]):
         return None
     n4 = n3.args[0]
-    # _fused_rms_norm_15 (as captured)
-    if not is_op(n4, 'aten._fused_rms_norm.default', [N, [7168], N, 1e-06]):
+    # _fused_rms_norm_15 (as captured: [N, [7168], N, 1e-06])
+    if not is_op(n4, 'aten._fused_rms_norm.default', [N, [S], N, 1e-06]):
         return None
     n5 = n4.args[0]
     n6 = n4.args[2]
@@ -40,8 +40,8 @@ def match_v0(n0):
         return None
     x0 = n5.args[0]
     x1 = n5.args[1]
-    # view_8141 (as captured)
-    if not is_op(n6, 'aten.view.default', [N, [7168]]):
+    # view_8141 (as captured: [N, [7168]])
+    if not is_op(n6, 'aten.view.default', [N, [S]]):
         return None
     x2 = n6.args[0]
     n7 = user_of(n2, (0,), '_operator.getitem', [N, 0], None, skip=(n0, n1, n2, n3, n4, n5, n6,))

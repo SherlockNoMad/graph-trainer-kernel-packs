@@ -7,7 +7,7 @@ the matchers below find 58 site(s); the finder reported 57 instance(s).
 Lifted by the pack's graph pass, in the order of ``PLAN`` in ``__init__.py``.
 """
 
-from graph_trainer_kernel_packs.lifting import is_op, N, user_of
+from graph_trainer_kernel_packs.lifting import is_op, N, S, user_of, V
 
 REGION_ID = "G-001"
 
@@ -23,8 +23,8 @@ def match_v0(n0):
     if not is_op(n1, 'aten.sum.default', [N]):
         return None
     n3 = n1.args[0]
-    # mul_12 (as captured)
-    if not is_op(n2, 'aten.mul.Tensor', [N, 1.0]):
+    # mul_12 (as captured: [N, 1.0])
+    if not is_op(n2, 'aten.mul.Tensor', [N, V]):
         return None
     n4 = n2.args[0]
     # mul_11 (as captured)
@@ -36,16 +36,16 @@ def match_v0(n0):
     if not is_op(n4, 'aten.reciprocal.default', [N]):
         return None
     n7 = n4.args[0]
-    # mul_10 (as captured)
-    if not is_op(n5, 'aten.mul.Tensor', [N, 256]):
+    # mul_10 (as captured: [N, 256])
+    if not is_op(n5, 'aten.mul.Tensor', [N, V]):
         return None
     n8 = n5.args[0]
     # sum_11 (as captured)
     if not is_op(n6, 'aten.sum.dim_IntList', [N, [0]]):
         return None
     n9 = n6.args[0]
-    # clamp_min_5 (as captured)
-    if not is_op(n7, 'aten.clamp_min.default', [N, 1]):
+    # clamp_min_5 (as captured: [N, 1])
+    if not is_op(n7, 'aten.clamp_min.default', [N, V]):
         return None
     x0 = n7.args[0]
     # div_5 (as captured)
@@ -62,8 +62,8 @@ def match_v0(n0):
     if not is_op(n10, 'aten.sum.dim_IntList', [N, [0]]):
         return None
     n14 = n10.args[0]
-    # expand_3 (as captured)
-    if not is_op(n11, 'aten.expand.default', [N, [256]]):
+    # expand_3 (as captured: [N, [256]])
+    if not is_op(n11, 'aten.expand.default', [N, [S]]):
         return None
     n15 = n11.args[0]
     # div_4 (as captured)
@@ -79,16 +79,16 @@ def match_v0(n0):
     if not is_op(n14, 'aten._to_copy.default', [N], {'dtype': 'torch.float32'}):
         return None
     n19 = n14.args[0]
-    # clamp_min_4 (as captured)
-    if not is_op(n15, 'aten.clamp_min.default', [N, 1e-12]):
+    # clamp_min_4 (as captured: [N, 1e-12])
+    if not is_op(n15, 'aten.clamp_min.default', [N, V]):
         return None
     n20 = n15.args[0]
     # sigmoid_1 (as captured)
     if not is_op(n16, 'aten.sigmoid.default', [N]):
         return None
     x1 = n16.args[0]
-    # expand_2 (as captured)
-    if not is_op(n17, 'aten.expand.default', [N, [4096, 256]]):
+    # expand_2 (as captured: [N, [4096, 256]])
+    if not is_op(n17, 'aten.expand.default', [N, [S, S]]):
         return None
     n21 = n17.args[0]
     # unsqueeze_31 (as captured)
@@ -100,13 +100,13 @@ def match_v0(n0):
         return None
     n22 = n19.args[0]
     n23 = n19.args[1]
-    # linalg_vector_norm_3 (as captured)
-    if not is_op(n20, 'aten.linalg_vector_norm.default', [N, 1, [0], True]):
+    # linalg_vector_norm_3 (as captured: [N, 1, [0], True])
+    if not is_op(n20, 'aten.linalg_vector_norm.default', [N, V, [0], True]):
         return None
     if n20.args[0] is not n10:
         return None
-    # clamp_min_3 (as captured)
-    if not is_op(n21, 'aten.clamp_min.default', [N, 1e-12]):
+    # clamp_min_3 (as captured: [N, 1e-12])
+    if not is_op(n21, 'aten.clamp_min.default', [N, V]):
         return None
     n24 = n21.args[0]
     # scatter__3 (as captured)
@@ -118,8 +118,8 @@ def match_v0(n0):
     if not is_op(n23, 'aten.bitwise_not.default', [N]):
         return None
     n27 = n23.args[0]
-    # linalg_vector_norm_2 (as captured)
-    if not is_op(n24, 'aten.linalg_vector_norm.default', [N, 1, [-1], True]):
+    # linalg_vector_norm_2 (as captured: [N, 1, [-1], True])
+    if not is_op(n24, 'aten.linalg_vector_norm.default', [N, V, [-1], True]):
         return None
     if n24.args[0] is not n16:
         return None
@@ -137,21 +137,21 @@ def match_v0(n0):
         return None
     if n27.args[0] is not x2:
         return None
-    # topk_5 (as captured)
-    if not is_op(n28, 'aten.topk.default', [N, 8, -1, True, False]):
+    # topk_5 (as captured: [N, 8, -1, True, False])
+    if not is_op(n28, 'aten.topk.default', [N, S, -1, True, False]):
         return None
     n29 = n28.args[0]
-    # view_228 (as captured)
-    if not is_op(n29, 'aten.reshape.default', [N, [4096, 256]]):
+    # view_228 (as captured: [N, [4096, 256]])
+    if not is_op(n29, 'aten.reshape.default', [N, [S, S]]):
         return None
     n30 = n29.args[0]
-    # masked_fill_3 (as captured)
-    if not is_op(n30, 'aten.masked_fill.Scalar', [N, N, float("-inf")]):
+    # masked_fill_3 (as captured: [N, N, float("-inf")])
+    if not is_op(n30, 'aten.masked_fill.Scalar', [N, N, V]):
         return None
     n31 = n30.args[0]
     n32 = n30.args[1]
-    # view_227 (as captured)
-    if not is_op(n31, 'aten.reshape.default', [N, [4096, 8, 32]]):
+    # view_227 (as captured: [N, [4096, 8, 32]])
+    if not is_op(n31, 'aten.reshape.default', [N, [S, S, S]]):
         return None
     n33 = n31.args[0]
     # unsqueeze_29 (as captured)
@@ -181,8 +181,8 @@ def match_v0(n0):
     if not is_op(n37, 'aten.sum.dim_IntList', [N, [-1]]):
         return None
     n39 = n37.args[0]
-    # topk_4 (as captured)
-    if not is_op(n38, 'aten.topk.default', [N, 4, -1, True, False]):
+    # topk_4 (as captured: [N, 4, -1, True, False])
+    if not is_op(n38, 'aten.topk.default', [N, S, -1, True, False]):
         return None
     if n38.args[0] is not n37:
         return None
@@ -190,8 +190,8 @@ def match_v0(n0):
     if not is_op(n39, '_operator.getitem', [N, 0]):
         return None
     n40 = n39.args[0]
-    # topk_3 (as captured)
-    if not is_op(n40, 'aten.topk.default', [N, 2]):
+    # topk_3 (as captured: [N, 2])
+    if not is_op(n40, 'aten.topk.default', [N, S]):
         return None
     if n40.args[0] is not n31:
         return None
@@ -213,11 +213,11 @@ def match_v0(n0):
         return None
     if n42.args[0] is not n41:
         return None
-    n43 = user_of(n42, (0,), 'aten.add.Tensor', [N, 1e-20], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42,))
+    n43 = user_of(n42, (0,), 'aten.add.Tensor', [N, V], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42,))
     if n43 is None:
         return None
-    # add_13 (as captured)
-    if not is_op(n43, 'aten.add.Tensor', [N, 1e-20]):
+    # add_13 (as captured: [N, 1e-20])
+    if not is_op(n43, 'aten.add.Tensor', [N, V]):
         return None
     if n43.args[0] is not n42:
         return None
@@ -231,11 +231,11 @@ def match_v0(n0):
         return None
     if n44.args[1] is not n43:
         return None
-    n45 = user_of(n44, (0,), 'aten.mul.Tensor', [N, 2.5], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44,))
+    n45 = user_of(n44, (0,), 'aten.mul.Tensor', [N, V], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44,))
     if n45 is None:
         return None
-    # mul_8 (as captured)
-    if not is_op(n45, 'aten.mul.Tensor', [N, 2.5]):
+    # mul_8 (as captured: [N, 2.5])
+    if not is_op(n45, 'aten.mul.Tensor', [N, V]):
         return None
     if n45.args[0] is not n44:
         return None
@@ -247,11 +247,11 @@ def match_v0(n0):
         return None
     if n46.args[0] is not n19:
         return None
-    n47 = user_of(n26, (0,), 'aten.masked_fill.Scalar', [N, N, -1], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44, n45, n46,))
+    n47 = user_of(n26, (0,), 'aten.masked_fill.Scalar', [N, N, V], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44, n45, n46,))
     if n47 is None:
         return None
-    # masked_fill_4 (as captured)
-    if not is_op(n47, 'aten.masked_fill.Scalar', [N, N, -1]):
+    # masked_fill_4 (as captured: [N, N, -1])
+    if not is_op(n47, 'aten.masked_fill.Scalar', [N, N, V]):
         return None
     if n47.args[0] is not n26:
         return None
@@ -261,11 +261,11 @@ def match_v0(n0):
         return None
     if n48.args[0] is not x2:
         return None
-    n49 = user_of(n45, (0,), 'aten.masked_fill.Scalar', [N, N, 0.0], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44, n45, n46, n47, n48,))
+    n49 = user_of(n45, (0,), 'aten.masked_fill.Scalar', [N, N, V], None, skip=(n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44, n45, n46, n47, n48,))
     if n49 is None:
         return None
-    # masked_fill_5 (as captured)
-    if not is_op(n49, 'aten.masked_fill.Scalar', [N, N, 0.0]):
+    # masked_fill_5 (as captured: [N, N, 0.0])
+    if not is_op(n49, 'aten.masked_fill.Scalar', [N, N, V]):
         return None
     if n49.args[0] is not n45:
         return None

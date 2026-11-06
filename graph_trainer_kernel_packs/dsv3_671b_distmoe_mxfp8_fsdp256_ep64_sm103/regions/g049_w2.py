@@ -7,7 +7,7 @@ the matchers below find 121 site(s); the finder reported 57 instance(s).
 Lifted by the pack's graph pass, in the order of ``PLAN`` in ``__init__.py``.
 """
 
-from graph_trainer_kernel_packs.lifting import is_op, N, user_of
+from graph_trainer_kernel_packs.lifting import is_op, N, S, user_of
 
 REGION_ID = "G-049"
 
@@ -35,8 +35,8 @@ def match_v0(n0):
     if not is_op(n4, '_operator.getitem', [N, 0]):
         return None
     n5 = n4.args[0]
-    # _fused_rms_norm_backward_4 (as captured)
-    if not is_op(n5, 'aten._fused_rms_norm_backward.default', [N, N, [7168], N, N, [True, True]]):
+    # _fused_rms_norm_backward_4 (as captured: [N, N, [7168], N, N, [True, True]])
+    if not is_op(n5, 'aten._fused_rms_norm_backward.default', [N, N, [S], N, N, [True, True]]):
         return None
     x1 = n5.args[0]
     x2 = n5.args[1]

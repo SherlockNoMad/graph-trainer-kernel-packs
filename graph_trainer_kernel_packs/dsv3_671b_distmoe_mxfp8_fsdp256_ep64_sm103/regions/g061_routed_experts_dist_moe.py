@@ -7,7 +7,7 @@ the matchers below find 116 site(s); the finder reported 58 instance(s).
 Lifted by the pack's graph pass, in the order of ``PLAN`` in ``__init__.py``.
 """
 
-from graph_trainer_kernel_packs.lifting import is_op, N, user_of
+from graph_trainer_kernel_packs.lifting import is_op, N, S, user_of
 
 REGION_ID = "G-061"
 
@@ -22,8 +22,8 @@ def match_v0(n0):
     if not is_op(n1, 'dist_moe.prepare_mxfp8_weight.default', [N]):
         return None
     n2 = n1.args[0]
-    # view_8200 (as captured)
-    if not is_op(n2, 'aten.view.default', [N, [4, 7168, 2048]]):
+    # view_8200 (as captured: [N, [4, 7168, 2048]])
+    if not is_op(n2, 'aten.view.default', [N, [S, S, S]]):
         return None
     x0 = n2.args[0]
     n3 = user_of(n1, (0,), '_operator.getitem', [N, 0], None, skip=(n0, n1, n2,))

@@ -7,15 +7,15 @@ the matchers below find 58 site(s); the finder reported 58 instance(s).
 Lifted by the pack's graph pass, in the order of ``PLAN`` in ``__init__.py``.
 """
 
-from graph_trainer_kernel_packs.lifting import is_op, N
+from graph_trainer_kernel_packs.lifting import is_op, N, S
 
 REGION_ID = "G-003"
 
 
 def match_v0(n0):
     """One instance, anchored at its bucketing._pre_bucket_reduce_scatter.default node: (members, external inputs) or None."""
-    # _pre_bucket_reduce_scatter_118 (as captured)
-    if not is_op(n0, 'bucketing._pre_bucket_reduce_scatter.default', [[N, N, N, N, N, N, N, N, N, N, N, N], 256, [3]]):
+    # _pre_bucket_reduce_scatter_118 (as captured: [[N, N, N, N, N, N, N, N, N, N, N, N], 256, [3]])
+    if not is_op(n0, 'bucketing._pre_bucket_reduce_scatter.default', [[N, N, N, N, N, N, N, N, N, N, N, N], S, [S]]):
         return None
     x0 = n0.args[0][0]
     x1 = n0.args[0][1]

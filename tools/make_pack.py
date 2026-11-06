@@ -30,7 +30,6 @@ from pathlib import Path
 
 from graph_trainer_kernel_packs.pack import current_target
 
-_LIFTING_NAMES = ("is_op", "N", "user_of")
 
 
 def _region_source(text: str) -> str:
@@ -49,9 +48,19 @@ def _region_source(text: str) -> str:
         "",
     )
     body = body[: body.index("\n\n\n@register_graph_pass")] + "\n"
-    old_import = "from lift_regions import is_op, lift_matches, N, user_of"
-    rest = body.replace(old_import, "")
-    used = [n for n in _LIFTING_NAMES if re.search(rf"\b{n}\b", rest)]
+    old_import = re.search(r"^from lift_regions import .*$", body, flags=re.M).group(0)
+    calls = [line for line in body.splitlines() if "is_op(" in line or "user_of(" in line]
+    used = ["is_op", "N"] + [
+        name
+        for name, pattern in (
+            ("D", r"[\[ ]D\("),
+            ("S", r"[\[ ]S[\],]"),
+            ("user_of", r"\buser_of\("),
+            ("V", r"[\[ ]V[\],]"),
+        )
+        if any(re.search(pattern, c) for c in calls)
+    ]
+    used = sorted(used, key=str.lower)
     body = body.replace(
         old_import, f"from graph_trainer_kernel_packs.lifting import {', '.join(used)}"
     )

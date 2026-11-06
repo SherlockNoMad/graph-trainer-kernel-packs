@@ -7,7 +7,7 @@ the matchers below find 58 site(s); the finder reported 58 instance(s).
 Lifted by the pack's graph pass, in the order of ``PLAN`` in ``__init__.py``.
 """
 
-from graph_trainer_kernel_packs.lifting import is_op, N, user_of
+from graph_trainer_kernel_packs.lifting import D, is_op, N, S, user_of, V
 
 REGION_ID = "G-006"
 
@@ -22,8 +22,8 @@ def match_v0(n0):
     if not is_op(n1, '_operator.getitem', [N, 2]):
         return None
     n2 = n1.args[0]
-    # split_62 (as captured)
-    if not is_op(n2, 'aten.split.Tensor', [N, 256, 1]):
+    # split_62 (as captured: [N, 256, 1])
+    if not is_op(n2, 'aten.split.Tensor', [N, S, 1]):
         return None
     n3 = n2.args[0]
     # cat_62 (as captured)
@@ -107,8 +107,8 @@ def match_v0(n0):
         return None
     n25 = n19.args[0]
     n26 = n19.args[1]
-    # new_zeros (as captured)
-    if not is_op(n20, 'aten.new_zeros.default', [N, [4096, 256]]):
+    # new_zeros (as captured: [N, [4096, 256]])
+    if not is_op(n20, 'aten.new_zeros.default', [N, [S, S]]):
         return None
     if n20.args[0] is not n21:
         return None
@@ -117,12 +117,12 @@ def match_v0(n0):
         return None
     n27 = n21.args[0]
     n28 = n21.args[1]
-    # lshift (as captured)
-    if not is_op(n22, 'aten.__lshift__.Scalar', [N, 16]):
+    # lshift (as captured: [N, 16])
+    if not is_op(n22, 'aten.__lshift__.Scalar', [N, V]):
         return None
     n29 = n22.args[0]
-    # lshift_1 (as captured)
-    if not is_op(n23, 'aten.__lshift__.Scalar', [N, 16]):
+    # lshift_1 (as captured: [N, 16])
+    if not is_op(n23, 'aten.__lshift__.Scalar', [N, V]):
         return None
     n30 = n23.args[0]
     # mul_466 (as captured)
@@ -145,8 +145,8 @@ def match_v0(n0):
         return None
     n35 = n27.args[0]
     x5 = n27.args[1]
-    # expand_118 (as captured)
-    if not is_op(n28, 'aten.expand.default', [N, [4096, 8]]):
+    # expand_118 (as captured: [N, [4096, 8]])
+    if not is_op(n28, 'aten.expand.default', [N, [S, S]]):
         return None
     n36 = n28.args[0]
     # _to_copy_915 (as captured)
@@ -157,23 +157,23 @@ def match_v0(n0):
     if not is_op(n30, 'aten._to_copy.default', [N], {'dtype': 'torch.int32'}):
         return None
     n38 = n30.args[0]
-    # expand_117 (as captured)
-    if not is_op(n31, 'aten.expand.default', [N, [4096, 256]]):
+    # expand_117 (as captured: [N, [4096, 256]])
+    if not is_op(n31, 'aten.expand.default', [N, [S, S]]):
         return None
     n39 = n31.args[0]
-    # gt (as captured)
-    if not is_op(n32, 'aten.gt.Scalar', [N, 1e-12]):
+    # gt (as captured: [N, 1e-12])
+    if not is_op(n32, 'aten.gt.Scalar', [N, V]):
         return None
     x6 = n32.args[0]
     # sum_349 (as captured)
     if not is_op(n33, 'aten.sum.dim_IntList', [N, [1], True]):
         return None
     n40 = n33.args[0]
-    # scalar_tensor (as captured)
-    if not is_op(n34, 'aten.scalar_tensor.default', [0.0], {'dtype': 'torch.float32', 'layout': 'torch.strided', 'device': 'cuda:0'}):
+    # scalar_tensor (as captured: [0.0], {'dtype': 'torch.float32', 'layout': 'torch.strided', 'device': 'cuda:0'})
+    if not is_op(n34, 'aten.scalar_tensor.default', [V], {'dtype': 'torch.float32', 'layout': 'torch.strided', 'device': D('cuda')}):
         return None
-    # mul_469 (as captured)
-    if not is_op(n35, 'aten.mul.Tensor', [N, 2.5]):
+    # mul_469 (as captured: [N, 2.5])
+    if not is_op(n35, 'aten.mul.Tensor', [N, V]):
         return None
     n41 = n35.args[0]
     # sum_350 (as captured)
@@ -197,8 +197,8 @@ def match_v0(n0):
         return None
     n46 = n40.args[0]
     n47 = n40.args[1]
-    # masked_fill_174 (as captured)
-    if not is_op(n41, 'aten.masked_fill.Scalar', [N, N, 0]):
+    # masked_fill_174 (as captured: [N, N, 0])
+    if not is_op(n41, 'aten.masked_fill.Scalar', [N, N, V]):
         return None
     x7 = n41.args[0]
     x8 = n41.args[1]
@@ -244,8 +244,8 @@ def match_v0(n0):
     n52 = n49.args[0]
     if n49.args[1] is not x5:
         return None
-    # expand_116 (as captured)
-    if not is_op(n50, 'aten.expand.default', [N, [256]]):
+    # expand_116 (as captured: [N, [256]])
+    if not is_op(n50, 'aten.expand.default', [N, [S]]):
         return None
     n53 = n50.args[0]
     # div_176 (as captured)

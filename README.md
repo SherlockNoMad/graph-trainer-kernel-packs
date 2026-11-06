@@ -13,8 +13,9 @@ with handwritten kernels that compute **bitwise identical** results, so loss and
 Requirements:
 
 - torchtitan with `substitute_kernels` ([pytorch/torchtitan#5838](https://github.com/pytorch/torchtitan/pull/5838)),
-  which is not in `main` yet; branch [`agentic_compiler`](https://github.com/pytorch/torchtitan/tree/agentic_compiler)
-  has it.
+  which is not in `main` yet: branch [`agentic_compiler`](https://github.com/pytorch/torchtitan/tree/agentic_compiler)
+  at `d89f7f53e` or later, where its cache keys are the same on every rank. A pack looks its kernels up
+  with these keys, so a later change to them needs a regenerated pack.
 - The exact environment in the pack's `manifest.json` `target` (torch build, CUDA, GPU, cutlass-dsl).
 - The pack's recipe, or one that produces the same graph: same model config and parallelism, and
   `debug.deterministic = True`.
@@ -49,15 +50,17 @@ joint graph (after GraphTrainer's own passes, before Inductor)
   -> check the environment against manifest.json "target"                  ValueError on mismatch
   -> lift each region in regions.PLAN order: matching subgraphs become call_module fusion_G<id>
   -> key each lifted call like substitute_kernels (#5838):
-       l1 = hash of the submodule's code and its custom ops' sources
-       l2 = specialization (AOTAutograd cache key of the submodule on its inputs)
+       l1 = hash of the submodule's code (device indices dropped) and its custom ops' sources
+       l2 = specialization (AOTAutograd cache key of the submodule on its inputs, on device index 0)
   -> kernels/pat_<l1>/<l2>.py exists: check its sha256, call its run() instead   ValueError on sha mismatch
      otherwise: the lifted call keeps running its original aten ops
   -> every kernel called exactly as often as manifest.json records             ValueError otherwise
 ```
 
-Nothing is written to the pack at runtime. A wrong environment, graph or specialization fails loudly at
-compile time instead of silently running slower or differently.
+Every rank lifts the same regions and finds the same kernels: matchers accept any size, scalar operand and
+device index (ranks differ in device index, bucket rank and FSDP shard offsets), and neither key depends on
+the device index. Nothing is written to the pack at runtime. A wrong environment, graph or specialization
+fails loudly at compile time instead of silently running slower or differently.
 
 **Known limitation.** l2 is the AOTAutograd cache key, which also covers settings a handwritten kernel does
 not depend on: `torch.use_deterministic_algorithms` and `fill_uninitialized_memory`, and Inductor config

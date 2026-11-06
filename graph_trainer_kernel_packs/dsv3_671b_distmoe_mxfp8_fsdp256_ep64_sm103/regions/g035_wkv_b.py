@@ -7,7 +7,7 @@ the matchers below find 61 site(s); the finder reported 61 instance(s).
 Lifted by the pack's graph pass, in the order of ``PLAN`` in ``__init__.py``.
 """
 
-from graph_trainer_kernel_packs.lifting import is_op, N, user_of
+from graph_trainer_kernel_packs.lifting import is_op, N, S, user_of
 
 REGION_ID = "G-035"
 
@@ -26,8 +26,8 @@ def match_v0(n0):
     if not is_op(n2, 'torchao.mxfp8_quantize.default', [N, True, True, 32, 32, 'e4m3', 'rceil']):
         return None
     n3 = n2.args[0]
-    # view_3490 (as captured)
-    if not is_op(n3, 'aten.reshape.default', [N, [4096, 32768]]):
+    # view_3490 (as captured: [N, [4096, 32768]])
+    if not is_op(n3, 'aten.reshape.default', [N, [S, S]]):
         return None
     n4 = n3.args[0]
     # squeeze_184 (as captured)
@@ -38,8 +38,8 @@ def match_v0(n0):
     if not is_op(n5, '_operator.getitem', [N, 0]):
         return None
     n6 = n5.args[0]
-    # fused_mla_kv_backward (as captured)
-    if not is_op(n6, 'torchtitan.fused_mla_kv_backward.default', [N, N, N, N, 128, 64]):
+    # fused_mla_kv_backward (as captured: [N, N, N, N, 128, 64])
+    if not is_op(n6, 'torchtitan.fused_mla_kv_backward.default', [N, N, N, N, S, S]):
         return None
     n7 = n6.args[0]
     n8 = n6.args[1]

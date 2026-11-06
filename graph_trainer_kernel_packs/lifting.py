@@ -5,7 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 # Vendored verbatim (below this comment) from torchtitan, branch agentic_compiler at
-# 1730fb2b8, torchtitan/experiments/graph_trainer/.claude/skills/fusion_region_finder/scripts/lift_regions.py.
+# 5f75e3bdc, torchtitan/experiments/graph_trainer/.claude/skills/fusion_region_finder/scripts/lift_regions.py.
 # TODO: move the lifting runtime into torchtitan's graph_trainer and import it from there.
 
 """Find fusion regions by topology and lift them into ``call_module`` nodes.
@@ -14,8 +14,11 @@ curate_regions.py generates one pass per region (``fusion_regions/g003_rope/lift
 It holds plain Python matchers: starting from an anchor node, a matcher walks the
 region's producers (``args``) and, where needed, users, and checks every op, its
 literal arguments, and that paths which meet in the region meet at the same node. It
-returns the instance's nodes and its external inputs. Nothing refers to node names, so
-a matcher finds the region wherever the same subgraph appears.
+returns the instance's nodes and its external inputs. Nothing refers to node names; sizes
+and scalar operands match any value and devices match by type (``S``, ``V``, ``D`` in
+``is_op``). So a matcher finds the region wherever the same subgraph appears: at other
+shapes and model configs, and on every rank (ranks differ in device index, bucket rank and
+shard offsets).
 
 ``lift_matches(gm, region_id, matchers)`` runs the matchers over the graph, drops
 matches that are not safe to lift (see ``lift_hazard``), and outlines each remaining
@@ -46,13 +49,29 @@ from torch.utils import _pytree as pytree
 logger = logging.getLogger(__name__)
 
 
-class _NodeSlot:
+class _Slot:
+    def __init__(self, name: str) -> None:
+        self.name = name
+
     def __repr__(self) -> str:
-        return "N"
+        return self.name
 
 
-# Marks a node-valued slot in an is_op argument template.
-N = _NodeSlot()
+class D:
+    """Template slot for a device argument: any device of this type, e.g. ``D('cuda')``."""
+
+    def __init__(self, device_type: str) -> None:
+        self.device_type = device_type
+
+    def __repr__(self) -> str:
+        return f"D({self.device_type!r})"
+
+
+# Slots in an is_op argument template: a node; a size (SymInt-typed argument, any int);
+# a scalar operand (a number passed to a Tensor or Scalar argument, any number).
+N = _Slot("N")
+S = _Slot("S")
+V = _Slot("V")
 
 
 @dataclass(eq=False)
@@ -164,6 +183,16 @@ def _fits(value: Any, template: Any) -> bool:
         return _is_node(value)
     if _is_node(value):
         return False
+    if template is S:
+        # Graph dumps write symbolic sizes as strings.
+        return isinstance(value, (int, str, torch.SymInt)) and not isinstance(
+            value, bool
+        )
+    if template is V:
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
+    if isinstance(template, D):
+        value = _encode(value)
+        return isinstance(value, str) and value.split(":")[0] == template.device_type
     if isinstance(template, list):
         return (
             isinstance(value, (list, tuple))
@@ -185,8 +214,10 @@ def is_op(
 ) -> bool:
     """``node`` calls ``target`` with exactly this argument structure.
 
-    In ``args``/``kwargs``, ``N`` marks a node; every other entry is a literal that must
-    be equal (dtypes and devices as strings, e.g. ``"torch.float32"``, ``"cuda:0"``).
+    In ``args``/``kwargs``, ``N`` marks a node, ``S`` a size (any int), ``V`` a scalar
+    operand (any number) and ``D('cuda')`` a device of that type (any index); lists must
+    have the template's length. Every other entry is a literal that must be equal (dtypes
+    as strings, e.g. ``"torch.float32"``).
     """
     return (
         _is_node(node)
@@ -223,7 +254,7 @@ def user_of(
 _SCHEMAS: dict[str, Any] = {}
 
 
-def _schema(node: Any) -> torch._C.FunctionSchema | None:
+def op_schema(node: Any) -> torch._C.FunctionSchema | None:
     """Schema of the op ``node`` calls, or None for Python callables and HOPs.
 
     Graph dumps record it; for older dumps the op is looked up by name, which needs
@@ -263,7 +294,7 @@ def _is_view(schema: torch._C.FunctionSchema) -> bool:
 
 def _writes(node: Any) -> list[Any]:
     """Nodes whose storage ``node`` writes (mutable schema arguments, e.g. ``self`` or ``out``)."""
-    schema = _schema(node)
+    schema = op_schema(node)
     if schema is None or not schema.is_mutable:
         return []
     written = []
@@ -285,7 +316,7 @@ def _alias_source(node: Any) -> Any:
     if target_str(node) == "_operator.getitem":
         src = node.args[0]
         return _alias_source(src) if _is_node(src) else None
-    schema = _schema(node)
+    schema = op_schema(node)
     if schema is None:
         return None
     # wait_tensor's schema has no alias annotation, but it returns its input tensor.
@@ -387,7 +418,7 @@ def _plain_outputs(members: list[Any]) -> list[Any]:
     while changed:
         changed = False
         for n in members:
-            schema = _schema(n)
+            schema = op_schema(n)
             if (
                 schema is not None
                 and _is_view(schema)

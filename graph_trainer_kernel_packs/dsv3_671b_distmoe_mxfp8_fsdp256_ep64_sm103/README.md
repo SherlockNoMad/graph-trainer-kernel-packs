@@ -29,12 +29,15 @@ meaningful one. Memory varies by about 0.6 GiB between identical runs.
 
 Built and verified with, not checked by the pass (their op sources are part of the kernels' cache keys):
 torchao 0.19.0.dev20261103+cu130, [dist_moe](https://github.com/meta-pytorch/dist_moe) 285763b, torchtitan
-[agentic_compiler](https://github.com/pytorch/torchtitan/tree/agentic_compiler) 1730fb2b8.
+[agentic_compiler](https://github.com/pytorch/torchtitan/tree/agentic_compiler) d89f7f53e.
 
 The recipe is `recipe.py`: torchtitan's `graph_trainer_deepseek_v3_671b_dist_moe_mxfp8` on FSDP 256 x EP 64,
 no PP, one microbatch per step, `debug.deterministic = True`, `scratch_capacity_factor = 64` (needed under
-the fake PG). Only this recipe under the fake PG on one GPU has been run; a real 256-GPU job runs the same
-graph, but is untested.
+the fake PG). The pack has run under the fake PG on one GPU, with this recipe on device index 1 and with the
+measurement setup on device index 0 and 1 (see Validation). Every rank lifts the same regions and finds the
+same kernels: matchers and cache keys do not depend on the device index, and no kernel's region has another
+rank-dependent literal. That is verified end to end on a real 4-GPU DeepSeek-V3 16B run, but a real 256-GPU
+671B job is untested.
 
 ## Kernels
 
@@ -103,14 +106,18 @@ loop's audit report is in torchtitan branch `agentic_compiler`,
 
 ## Validation
 
-Two 10-step runs with this package, its pass as the only extra pass, on 2026-11-05:
+10-step runs with this package at torchtitan `d89f7f53e`, its pass as the only extra pass, on 2026-11-05.
+The measurement setup is the one above (fusion_finder pass pipeline, profiler, CUDA graphs off):
 
 | Run | Kernel calls | Loss / grad_norm vs baseline | GPU time, excl. fake-PG collectives |
 |---|---|---|---|
-| measurement setup above (fusion_finder pass pipeline, profiler, CUDA graphs off) | 1247 to 20 kernels, as in `manifest.json` | bitwise identical, steps 1 and 10 | 503.4 ms (baseline 583.9 ms) |
-| `recipe.py` as shipped (default pass pipeline, CUDA graphs on) plus TensorBoard | 1247 to 20 kernels | bitwise identical, steps 1 and 10 | not profiled |
+| measurement setup, device index 0 | 1247 to 20 kernels, as in `manifest.json` | bitwise identical, steps 1 and 10 | 498.9 ms (baseline 578.4 ms, both on GPU 2) |
+| measurement setup, device index 1 (`LOCAL_RANK=1`) | 1247 to 20 kernels | bitwise identical, steps 1 and 10 | not timed |
+| `recipe.py` as shipped (default pass pipeline, CUDA graphs on) plus TensorBoard, device index 1 | 1247 to 20 kernels | bitwise identical to the recipe without the pack, steps 1 and 10 | not profiled |
 
-Both runs also matched the MoE load-balance loss bitwise. The loss and grad_norm values compared are the
+The timed run had the GPUs to itself: no other process used any GPU while it ran (two attempts that shared
+the node with another job measured about 600 ms, with unrelated kernels such as the optimizer's slowed
+down too). All runs also matched the MoE load-balance loss bitwise. The loss and grad_norm values compared are the
 TensorBoard scalars at full float precision, not the five digits printed to stdout.
 
 ## Files
@@ -120,7 +127,7 @@ TensorBoard scalars at full float precision, not the five digits printed to stdo
 | `__init__.py` | registers the pass |
 | `recipe.py` | the verified recipe |
 | `manifest.json` | target, and per kernel its sha256 and calls per step (generated) |
-| `regions/` | the 13 regions' topology matchers; `PLAN` is the lift order (generated) |
+| `regions/` | the 13 regions' topology matchers, independent of shapes and rank; `PLAN` is the lift order (generated) |
 | `kernels/` | `pat_<l1>/reference.py`, `specialization_<l2>.json`, `<l2>.py` (generated, byte-identical to the verified files) |
 | `verification/` | the swarm's task board and the correctness/timing harness |
 
