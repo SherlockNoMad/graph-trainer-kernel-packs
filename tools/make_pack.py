@@ -36,9 +36,9 @@ def _region_source(text: str) -> str:
     """A fusion_region_finder ``lift_pass.py`` without its pass registration."""
     doc_end = text.index('"""', 3)
     doc = text[:doc_end].split("\n\nEach matcher walks")[0]
-    # The capture directory is a local path.
+    # The capture directory is a local path; name it by its loop directory.
     doc = re.sub(
-        r"from /\S+/([^/\s]+)\. In that capture",
+        r"from /\S+?/([^/\s]+?)(?:/capture)?\. In that capture",
         r"from the \1 capture. In that capture",
         doc,
     )
