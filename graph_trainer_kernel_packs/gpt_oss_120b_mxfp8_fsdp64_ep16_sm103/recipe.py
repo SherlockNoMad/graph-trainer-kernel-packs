@@ -26,9 +26,9 @@ from . import gpt_oss_120b_mxfp8_fsdp64_ep16_sm103 as kernel_pack_pass
 
 def gpt_oss_120b_mxfp8_fsdp64_ep16():
     config = graph_trainer_gpt_oss_120b_mxfp8_64gpu()
-    # The kernels reproduce the deterministic index_put / index_add path, and their
-    # specialization keys include the deterministic-algorithms setting; seed 42
-    # reproduces the losses in README.md.
+    # The kernels reproduce the deterministic index_put path, and their specialization
+    # keys include the deterministic-algorithms setting; seed 42 reproduces the losses
+    # in README.md.
     config.debug.deterministic = True
     config.debug.seed = 42
     config.compile.extra_passes = [kernel_pack_pass.__name__]

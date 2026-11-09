@@ -12,7 +12,7 @@
 Symbolic sizes in the spec (``N0``, ``2*N0``, ...) take their values from --sym, else from
 the real inputs (matched against the spec's shapes). --gen names a file whose
 ``make_inputs(spec, generator, sizes)`` returns the inputs for one seed (sizes: symbol ->
-int), for problems whose index inputs need valid values (e.g. index_add destinations).
+int), for problems whose index inputs need valid values (e.g. index_put destinations).
 
 Inputs follow the spec (shape, stride, dtype, device). int64 tensors with a last dim k
 are top-k style indices: k distinct values per row in [0, 256). Reference and candidate

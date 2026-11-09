@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-"""Inputs for mox's MoE gather/scatter problems (G-011, G-014, G-023, G-025, G-036).
+"""Inputs for mox's MoE gather/scatter problems (G-011, G-023, G-025, G-036).
 
 make_inputs(spec, generator, sizes) detects the problem from the spec signature/inputs and
 returns inputs in run() order, laid out exactly as the spec (expanded int64 indices keep
@@ -20,7 +20,7 @@ Seed families (seed % 100 // 10):
   1: arbitrary valid indices: duplicates and empty destinations (randint), randn values
   2: training-like routing, special values (NaN payloads, +-inf, +-0, denormals, huge)
   3: heavy duplicates (few destinations, >= 32 duplicates each), wide-exponent values
-  4: negative indices where the op wraps them (index_put / scatter_add), randn values
+  4: negative indices where the op wraps them (index_put), randn values
 R defaults to 65536; --sym N0=.. (sum of N0..N15) sets R, N16..N31 set M (G-036).
 """
 
@@ -181,15 +181,6 @@ def make_inputs(spec, g, sizes):
         in2 = _vals((r, D), g, dev, torch.bfloat16, fam)
         in3 = _scores((n, 1), g, dev, fam)
         in4 = perm.clone()
-        return [in0, in1, in2, in3, in4]
-    if shapes[0] == [16384, 4]:
-        # G-014 combine forward: run(in0 [T,K] f32, in1 [N] i64, in2 [R,D] bf16, in3 [T,D] bf16,
-        #                           in4 [N,D] i64 (stride 1,0))
-        in0 = _scores((T, K), g, dev, fam)
-        in1 = perm.clone()
-        in2 = _vals((r, D), g, dev, torch.bfloat16, fam)
-        in3 = _vals((T, D), g, dev, torch.bfloat16, 0)
-        in4 = _expand_rows((tok_neg if fam == 4 else tok).clone(), D)
         return [in0, in1, in2, in3, in4]
     if len(ins) == 3 and ins[1].get("shape") == [65536]:
         # G-023: run(in0 [R,D] bf16, in1 [N] i64, in2 [T,D] bf16)

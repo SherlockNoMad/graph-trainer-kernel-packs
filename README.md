@@ -7,7 +7,7 @@ with handwritten kernels that compute **bitwise identical** results, so loss and
 | Pack | Model and layout | Hardware | GPU time per step | Numerics |
 |---|---|---|---|---|
 | [`dsv3_671b_distmoe_mxfp8_fsdp256_ep64_sm103`](graph_trainer_kernel_packs/dsv3_671b_distmoe_mxfp8_fsdp256_ep64_sm103/README.md) | DeepSeek-V3 671B, DistMoE, MXFP8; FSDP 256 x EP 64 | GB300 | -13.8% (583.9 -> 503.4 ms, excluding fake-PG collectives) | bitwise identical |
-| [`gpt_oss_120b_mxfp8_fsdp64_ep16_sm103`](graph_trainer_kernel_packs/gpt_oss_120b_mxfp8_fsdp64_ep16_sm103/README.md) | GPT-OSS 120B, MXFP8 attention + lm_head; FSDP 64 x EP 16 | GB300 | 3.74x (2000.4 -> 534.7 ms per microbatch, excluding fake-PG collectives); 3.2x tokens/s (7,844 -> 25,092) | bitwise identical to the deterministic recipe |
+| [`gpt_oss_120b_mxfp8_fsdp64_ep16_sm103`](graph_trainer_kernel_packs/gpt_oss_120b_mxfp8_fsdp64_ep16_sm103/README.md) | GPT-OSS 120B, MXFP8 attention + lm_head; FSDP 64 x EP 16 | GB300 | -15.7% (1992.3 -> 1679.2 ms per microbatch, excluding fake-PG collectives); +24.0% tokens/s (7,638 -> 9,468) | bitwise identical to the deterministic recipe |
 | [`qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103`](graph_trainer_kernel_packs/qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103/README.md) | Qwen3 30B-A3B, DistMoE, MXFP8; FSDP 8 x EP 8 | GB300 | -29.8% (967.9 -> 679.6 ms, excluding fake-PG collectives) | bitwise identical |
 | [`qwen3_235b_a22b_distmoe_mxfp8_fsdp256_ep32_sm103`](graph_trainer_kernel_packs/qwen3_235b_a22b_distmoe_mxfp8_fsdp256_ep32_sm103/README.md) | Qwen3 235B-A22B, DistMoE, MXFP8; FSDP 256 x EP 32 | GB300 | -28.8% (1036.4 -> 737.7 ms, excluding fake-PG collectives); +38.1% tokens/s (7,698 -> 10,631) | bitwise identical |
 
