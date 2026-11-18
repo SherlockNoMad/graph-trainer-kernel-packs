@@ -49,6 +49,16 @@ from graph_trainer_kernel_packs.dsv3_671b_distmoe_mxfp8_fsdp256_ep64_sm103 impor
 config.compile.extra_passes = [dsv3_671b_distmoe_mxfp8_fsdp256_ep64_sm103.__name__]
 ```
 
+## Pack formats
+
+The other packs ship their own region matchers (`regions/`, run by `lifting.py`)
+and substitute_kernels cache entries (`kernels/pat_<l1>/<l2>.py`), and need torchtitan's `agentic_compiler`
+branch. `dsv3_debug_fsdp8_sm103` is in the fusion_finder format (`fusion_finder_pack.py`): the pack holds
+fusion_finder's `regions.json` and its verified kernel problems (`kernels/pattern_<l1>/<l2>/`, each with its
+reference, contract, saved inputs and `kernel.py`), and runs torchtitan's own lift and kernel passes, so it
+carries no matcher code. `tools/make_fusion_finder_pack.py` builds one from a capture and its problems.
+The rest of this section describes the first format.
+
 ## How a pack works
 
 ```

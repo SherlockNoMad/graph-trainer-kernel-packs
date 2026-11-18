@@ -21,4 +21,4 @@ include = ["graph_trainer_kernel_packs*"]
 namespaces = false
 
 [tool.setuptools.package-data]
-"*" = ["manifest.json", "README.md", "kernels/*/*", "verification/*"]
+"*" = ["manifest.json", "regions.json", "README.md", "kernels/*", "kernels/*/*", "kernels/*/*/*", "verification/*"]
