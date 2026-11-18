@@ -11,6 +11,7 @@ with handwritten kernels that compute **bitwise identical** results, so loss and
 | [`qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103`](graph_trainer_kernel_packs/qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103/README.md) | Qwen3 30B-A3B, DistMoE, MXFP8; FSDP 8 x EP 8 | GB300 | -29.8% (967.9 -> 679.6 ms, excluding fake-PG collectives) | bitwise identical |
 | [`qwen3_235b_a22b_distmoe_mxfp8_fsdp256_ep32_sm103`](graph_trainer_kernel_packs/qwen3_235b_a22b_distmoe_mxfp8_fsdp256_ep32_sm103/README.md) | Qwen3 235B-A22B, DistMoE, MXFP8; FSDP 256 x EP 32 | GB300 | -28.8% (1036.4 -> 737.7 ms, excluding fake-PG collectives); +38.1% tokens/s (7,698 -> 10,631) | bitwise identical |
 | [`dsv3_debug_fsdp8_sm103`](graph_trainer_kernel_packs/dsv3_debug_fsdp8_sm103/README.md) | DeepSeek-V3 debug model; FSDP 8 (fusion_finder format) | GB300 | -32.6% (44.35 -> 29.89 ms, profiled); +23% tokens/s with CUDA graphs | bitwise identical |
+| [`qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103_fusion_finder`](graph_trainer_kernel_packs/qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103_fusion_finder/README.md) | Qwen3 30B-A3B, DistMoE, MXFP8; FSDP 8 x EP 8 (fusion_finder format) | GB300 | -28.8% (974.2 -> 693.4 ms, profiled); +36.8% tokens/s (33,165 -> 45,375) with CUDA graphs | bitwise identical |
 
 ## Use
 
@@ -54,7 +55,8 @@ config.compile.extra_passes = [dsv3_671b_distmoe_mxfp8_fsdp256_ep64_sm103.__name
 
 The other packs ship their own region matchers (`regions/`, run by `lifting.py`)
 and substitute_kernels cache entries (`kernels/pat_<l1>/<l2>.py`), and need torchtitan's `agentic_compiler`
-branch. `dsv3_debug_fsdp8_sm103` is in the fusion_finder format (`fusion_finder_pack.py`): the pack holds
+branch. `dsv3_debug_fsdp8_sm103` and `qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103_fusion_finder` are in the
+fusion_finder format (`fusion_finder_pack.py`): the pack holds
 fusion_finder's `regions.json` and its verified kernel problems (`kernels/pattern_<l1>/<l2>/`, each with its
 reference, contract, saved inputs and `kernel.py`), and runs torchtitan's own lift and kernel passes, so it
 carries no matcher code. `tools/make_fusion_finder_pack.py` builds one from a capture and its problems.

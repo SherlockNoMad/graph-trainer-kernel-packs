@@ -1,0 +1,444 @@
+{
+ "id": "pattern_0699a4e4475830bf0d50747499e27e09928126b368d03b548f3ac5435959d81c/aaha4wlhbpy4ukyk3kpkduk27jtcys6crj6m44w7j44mrwzzhcci",
+ "signature": "def kernel_function(in0)",
+ "inputs": [
+  {
+   "shape": [32768, 2048],
+   "stride": [2048, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [32768, 2048],
+   "stride": [1, 32768],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 1024],
+   "stride": [1024, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r016_i1",
+   "storages": [
+    {
+     "nbytes": 134217728,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [32768, 2048],
+     "stride": [2048, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r016_i3",
+   "storages": [
+    {
+     "nbytes": 134217728,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [32768, 2048],
+     "stride": [2048, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r016_i5",
+   "storages": [
+    {
+     "nbytes": 134217728,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [32768, 2048],
+     "stride": [2048, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/qwen3_30b",
+  "region": "r016",
+  "calls": [
+   {
+    "name": "fusion_r016_i1",
+    "module": "layers.47.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.4,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i3",
+    "module": "layers.46.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.3,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i5",
+    "module": "layers.45.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.3,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i7",
+    "module": "layers.44.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 36.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i9",
+    "module": "layers.43.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i11",
+    "module": "layers.42.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.1,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i13",
+    "module": "layers.41.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.5,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i15",
+    "module": "layers.40.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.3,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i17",
+    "module": "layers.39.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i19",
+    "module": "layers.38.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i21",
+    "module": "layers.37.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i23",
+    "module": "layers.36.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.8,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i25",
+    "module": "layers.35.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i27",
+    "module": "layers.34.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.1,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i29",
+    "module": "layers.33.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.4,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i31",
+    "module": "layers.32.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i33",
+    "module": "layers.31.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 34.9,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i35",
+    "module": "layers.30.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 34.8,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i37",
+    "module": "layers.29.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 34.8,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i39",
+    "module": "layers.28.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.5,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i41",
+    "module": "layers.27.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.4,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i43",
+    "module": "layers.26.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.8,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i45",
+    "module": "layers.25.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i47",
+    "module": "layers.24.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i49",
+    "module": "layers.23.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.4,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i51",
+    "module": "layers.22.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.7,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i53",
+    "module": "layers.21.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i55",
+    "module": "layers.20.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.4,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i57",
+    "module": "layers.19.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.9,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i59",
+    "module": "layers.18.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i61",
+    "module": "layers.17.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.1,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i63",
+    "module": "layers.16.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 34.9,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i65",
+    "module": "layers.15.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 34.8,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i67",
+    "module": "layers.14.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i69",
+    "module": "layers.13.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.6,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i71",
+    "module": "layers.12.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 36.4,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i73",
+    "module": "layers.11.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i75",
+    "module": "layers.10.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.9,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i77",
+    "module": "layers.9.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i79",
+    "module": "layers.8.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.6,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i81",
+    "module": "layers.7.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i83",
+    "module": "layers.6.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i85",
+    "module": "layers.5.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 34.8,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i87",
+    "module": "layers.4.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i89",
+    "module": "layers.3.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i91",
+    "module": "layers.2.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 36.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i93",
+    "module": "layers.1.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.4,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r016_i95",
+    "module": "layers.0.attention.qkv_linear.wqkv",
+    "phase": "backward",
+    "measured_us": 35.3,
+    "ideal_us": 29.6
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 32ul, 1ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}
