@@ -13,6 +13,10 @@ with handwritten kernels that compute **bitwise identical** results, so loss and
 | [`dsv3_debug_fsdp8_sm103`](graph_trainer_kernel_packs/dsv3_debug_fsdp8_sm103/README.md) | DeepSeek-V3 debug model; FSDP 8 (fusion_finder format) | GB300 | -32.6% (44.35 -> 29.89 ms, profiled); +23% tokens/s with CUDA graphs | bitwise identical |
 | [`qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103_fusion_finder`](graph_trainer_kernel_packs/qwen3_30b_a3b_distmoe_mxfp8_fsdp8_ep8_sm103_fusion_finder/README.md) | Qwen3 30B-A3B, DistMoE, MXFP8; FSDP 8 x EP 8 (fusion_finder format) | GB300 | -28.8% (974.2 -> 693.4 ms, profiled); +36.8% tokens/s (33,165 -> 45,375) with CUDA graphs | bitwise identical |
 
+[`kernel_problems/`](kernel_problems/README.md) holds the kernel problems fusion_finder wrote for four models
+(DeepSeek-V3 debug and 671B, Qwen3 30B-A3B, GPT-OSS 120B), in the layout of a fusion_finder pack without the
+kernels.
+
 ## Use
 
 Requirements:
@@ -117,6 +121,7 @@ graph_trainer_kernel_packs/
   <pack>/         one directory per pack: __init__.py (registers the pass), recipe.py, README.md,
                   manifest.json, regions/, kernels/, verification/
 tools/make_pack.py
+kernel_problems/<set>/  one problem set: the layout of a fusion_finder pack without kernel.py
 ```
 
 Generated region files and kernels are kept exactly as produced and verified; don't reformat them (a kernel's

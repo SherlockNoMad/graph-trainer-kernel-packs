@@ -1,0 +1,836 @@
+{
+ "id": "pattern_8cfcc3c8cffdd4af6c3cb1d7f5aa04a4852aec87884fd397ee08c5583d3f9e22/a24xsasq5u772rvt63lexrhw35qzysetra7rabfla6ccgehesizx",
+ "signature": "def kernel_function(in0, in1, in2, in3, in4, in5, in6)",
+ "inputs": [
+  {
+   "shape": [4096, 8],
+   "stride": [8, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 1],
+   "stride": [1, 1],
+   "dtype": "bool",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 8],
+   "stride": [8, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 1],
+   "stride": [1, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 8],
+   "stride": [8, 1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 256],
+   "stride": [256, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 256],
+   "stride": [256, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [4096, 768],
+   "stride": [768, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256, 4096],
+   "stride": [1, 768],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256, 4096],
+   "stride": [1, 768],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256, 4096],
+   "stride": [1, 768],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r002_i0",
+   "storages": [
+    {
+     "nbytes": 131072,
+     "generated": true
+    },
+    {
+     "nbytes": 4096,
+     "generated": false
+    },
+    {
+     "nbytes": 131072,
+     "generated": true
+    },
+    {
+     "nbytes": 16384,
+     "generated": true
+    },
+    {
+     "nbytes": 262144,
+     "generated": false
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "int64",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 6,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r002_i1",
+   "storages": [
+    {
+     "nbytes": 131072,
+     "generated": true
+    },
+    {
+     "nbytes": 4096,
+     "generated": false
+    },
+    {
+     "nbytes": 131072,
+     "generated": true
+    },
+    {
+     "nbytes": 16384,
+     "generated": true
+    },
+    {
+     "nbytes": 262144,
+     "generated": false
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "int64",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 6,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r002_i2",
+   "storages": [
+    {
+     "nbytes": 131072,
+     "generated": true
+    },
+    {
+     "nbytes": 4096,
+     "generated": false
+    },
+    {
+     "nbytes": 131072,
+     "generated": true
+    },
+    {
+     "nbytes": 16384,
+     "generated": true
+    },
+    {
+     "nbytes": 262144,
+     "generated": false
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 8],
+     "stride": [8, 1],
+     "dtype": "int64",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 6,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r002",
+  "calls": [
+   {
+    "name": "fusion_r002_i0",
+    "module": "layers.60.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.9,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i1",
+    "module": "layers.59.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i2",
+    "module": "layers.58.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.1,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i3",
+    "module": "layers.57.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.2,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i4",
+    "module": "layers.56.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.7,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i5",
+    "module": "layers.55.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.4,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i6",
+    "module": "layers.54.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.8,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i7",
+    "module": "layers.53.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.8,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i8",
+    "module": "layers.52.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.3,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i9",
+    "module": "layers.51.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i10",
+    "module": "layers.50.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 177.5,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i11",
+    "module": "layers.49.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.1,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i12",
+    "module": "layers.48.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.5,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i13",
+    "module": "layers.47.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.1,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i14",
+    "module": "layers.46.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.3,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i15",
+    "module": "layers.45.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.5,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i16",
+    "module": "layers.44.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.7,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i17",
+    "module": "layers.43.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i18",
+    "module": "layers.42.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.4,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i19",
+    "module": "layers.41.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.9,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i20",
+    "module": "layers.40.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.1,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i21",
+    "module": "layers.39.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.1,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i22",
+    "module": "layers.38.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.1,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i23",
+    "module": "layers.37.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.2,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i24",
+    "module": "layers.36.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.7,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i25",
+    "module": "layers.35.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.8,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i26",
+    "module": "layers.34.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.3,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i27",
+    "module": "layers.33.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.8,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i28",
+    "module": "layers.32.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.4,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i29",
+    "module": "layers.31.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i30",
+    "module": "layers.30.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i31",
+    "module": "layers.29.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.0,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i32",
+    "module": "layers.28.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.9,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i33",
+    "module": "layers.27.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.5,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i34",
+    "module": "layers.26.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.9,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i35",
+    "module": "layers.25.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.2,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i36",
+    "module": "layers.24.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.9,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i37",
+    "module": "layers.23.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.0,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i38",
+    "module": "layers.22.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.0,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i39",
+    "module": "layers.21.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 178.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i40",
+    "module": "layers.20.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.2,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i41",
+    "module": "layers.19.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i42",
+    "module": "layers.18.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.2,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i43",
+    "module": "layers.17.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i44",
+    "module": "layers.16.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.5,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i45",
+    "module": "layers.15.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.9,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i46",
+    "module": "layers.14.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.5,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i47",
+    "module": "layers.13.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.0,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i48",
+    "module": "layers.12.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.1,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i49",
+    "module": "layers.11.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 179.8,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i50",
+    "module": "layers.10.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.4,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i51",
+    "module": "layers.9.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.4,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i52",
+    "module": "layers.8.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.3,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i53",
+    "module": "layers.7.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.7,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i54",
+    "module": "layers.6.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 181.6,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i55",
+    "module": "layers.5.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.0,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i56",
+    "module": "layers.4.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.4,
+    "ideal_us": 2.2
+   },
+   {
+    "name": "fusion_r002_i57",
+    "module": "layers.3.feed_forward.router.gate",
+    "phase": "backward",
+    "measured_us": 180.3,
+    "ideal_us": 2.2
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.masked_fill.Scalar",
+    "kernels": "Memcpy DtoD (Device -> Device) | void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.neg.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::neg_kernel_cuda(at"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<floa"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.new_zeros.default",
+    "kernels": "Memset (Device)"
+   },
+   {
+    "op": "aten.scatter_add.default",
+    "kernels": "Memcpy DtoD (Device -> Device) | Memset (Device)"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<fl"
+   },
+   {
+    "op": "aten.sigmoid_backward.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_backward_k"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda"
+   },
+   {
+    "op": "aten.__lshift__.Scalar",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<int,"
+   },
+   {
+    "op": "aten.sub.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<fl"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda"
+   },
+   {
+    "op": "aten.__lshift__.Scalar",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<int,"
+   },
+   {
+    "op": "aten.sub.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<fl"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten.cat.default",
+    "kernels": "void at::native::(anonymous namespace)::CatArrayBatchedCopy_vectorized<at::nativ"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

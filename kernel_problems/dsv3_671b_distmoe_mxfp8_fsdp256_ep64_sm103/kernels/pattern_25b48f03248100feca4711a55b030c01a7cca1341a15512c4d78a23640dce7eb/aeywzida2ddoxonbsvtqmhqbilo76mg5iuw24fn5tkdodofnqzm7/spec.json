@@ -1,0 +1,584 @@
+{
+ "id": "pattern_25b48f03248100feca4711a55b030c01a7cca1341a15512c4d78a23640dce7eb/aeywzida2ddoxonbsvtqmhqbilo76mg5iuw24fn5tkdodofnqzm7",
+ "signature": "def kernel_function(in0, in1)",
+ "inputs": [
+  {
+   "shape": [4096, 576],
+   "stride": [576, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [512],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [4096, 512],
+   "stride": [512, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 16],
+   "stride": [16, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [1, 4096, 64],
+   "stride": [2359296, 576, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, "in0"],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r030_i0",
+   "storages": [
+    {
+     "nbytes": 4718592,
+     "generated": true
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 576],
+     "stride": [576, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [512],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r030_i1",
+   "storages": [
+    {
+     "nbytes": 4718592,
+     "generated": true
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 576],
+     "stride": [576, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [512],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r030_i2",
+   "storages": [
+    {
+     "nbytes": 4718592,
+     "generated": true
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 576],
+     "stride": [576, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [512],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r030",
+  "calls": [
+   {
+    "name": "fusion_r030_i0",
+    "module": "layers.0.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i1",
+    "module": "layers.1.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i2",
+    "module": "layers.2.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i3",
+    "module": "layers.3.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i4",
+    "module": "layers.4.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i5",
+    "module": "layers.5.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i6",
+    "module": "layers.6.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i7",
+    "module": "layers.7.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i8",
+    "module": "layers.8.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i9",
+    "module": "layers.9.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i10",
+    "module": "layers.10.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i11",
+    "module": "layers.11.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i12",
+    "module": "layers.12.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i13",
+    "module": "layers.13.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i14",
+    "module": "layers.14.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i15",
+    "module": "layers.15.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 11.9,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i16",
+    "module": "layers.16.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i17",
+    "module": "layers.17.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i18",
+    "module": "layers.18.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i19",
+    "module": "layers.19.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i20",
+    "module": "layers.20.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i21",
+    "module": "layers.21.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i22",
+    "module": "layers.22.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i23",
+    "module": "layers.23.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 11.9,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i24",
+    "module": "layers.24.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.4,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i25",
+    "module": "layers.25.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i26",
+    "module": "layers.26.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i27",
+    "module": "layers.27.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i28",
+    "module": "layers.28.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i29",
+    "module": "layers.29.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i30",
+    "module": "layers.30.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i31",
+    "module": "layers.31.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i32",
+    "module": "layers.32.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i33",
+    "module": "layers.33.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.4,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i34",
+    "module": "layers.34.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i35",
+    "module": "layers.35.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 11.9,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i36",
+    "module": "layers.36.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i37",
+    "module": "layers.37.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i38",
+    "module": "layers.38.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i39",
+    "module": "layers.39.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i40",
+    "module": "layers.40.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i41",
+    "module": "layers.41.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i42",
+    "module": "layers.42.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i43",
+    "module": "layers.43.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i44",
+    "module": "layers.44.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.5,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i45",
+    "module": "layers.45.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i46",
+    "module": "layers.46.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i47",
+    "module": "layers.47.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i48",
+    "module": "layers.48.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i49",
+    "module": "layers.49.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i50",
+    "module": "layers.50.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i51",
+    "module": "layers.51.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.2,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i52",
+    "module": "layers.52.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i53",
+    "module": "layers.53.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i54",
+    "module": "layers.54.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i55",
+    "module": "layers.55.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i56",
+    "module": "layers.56.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i57",
+    "module": "layers.57.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i58",
+    "module": "layers.58.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.0,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i59",
+    "module": "layers.59.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.1,
+    "ideal_us": 1.3
+   },
+   {
+    "name": "fusion_r030_i60",
+    "module": "layers.60.attention.inner_attention.wkv_b",
+    "phase": "forward",
+    "measured_us": 12.3,
+    "ideal_us": 1.3
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten._fused_rms_norm.default",
+    "kernels": "kernel_cutlass_kernel_torch_vendorquackrmsnormRMSNorm_object_at__tensorptrbf16gm | void at::native::elementwise_kernel<128, 4, at::native::(anonymous namespace)::m"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 32ul, 32ul, (ScaleCalcu"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

@@ -1,0 +1,119 @@
+{
+ "id": "pattern_cd69bfdaee6976439c1c9fab1cf86a56cefd3ff4749aba79c19330f59a099dc0/aresq22uuuj7km43idbpztvdnafuto4jmwu2ne6i7hhteiejtvdd",
+ "signature": "def kernel_function(in0)",
+ "inputs": [
+  {
+   "shape": [36864, 7168],
+   "stride": [7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [512, 72, 7168],
+   "stride": [516096, 7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r001_i58",
+   "storages": [
+    {
+     "nbytes": 528482304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [36864, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r001_i59",
+   "storages": [
+    {
+     "nbytes": 528482304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [36864, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r001_i60",
+   "storages": [
+    {
+     "nbytes": 528482304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [36864, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r001",
+  "calls": [
+   {
+    "name": "fusion_r001_i58",
+    "module": "layers.2.feed_forward.w13",
+    "phase": "backward",
+    "measured_us": 922.7,
+    "ideal_us": 152.1
+   },
+   {
+    "name": "fusion_r001_i59",
+    "module": "layers.1.feed_forward.w13",
+    "phase": "backward",
+    "measured_us": 922.2,
+    "ideal_us": 152.1
+   },
+   {
+    "name": "fusion_r001_i60",
+    "module": "layers.0.feed_forward.w13",
+    "phase": "backward",
+    "measured_us": 922.5,
+    "ideal_us": 152.1
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.cat.default",
+    "kernels": "void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymo"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

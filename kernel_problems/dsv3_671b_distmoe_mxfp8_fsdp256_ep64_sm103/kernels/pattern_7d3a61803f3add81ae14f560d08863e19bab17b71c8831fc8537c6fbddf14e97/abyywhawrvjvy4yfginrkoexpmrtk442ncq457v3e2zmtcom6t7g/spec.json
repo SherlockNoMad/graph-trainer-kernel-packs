@@ -1,0 +1,763 @@
+{
+ "id": "pattern_7d3a61803f3add81ae14f560d08863e19bab17b71c8831fc8537c6fbddf14e97/abyywhawrvjvy4yfginrkoexpmrtk442ncq457v3e2zmtcom6t7g",
+ "signature": "def kernel_function(in0, in1, in2, in3, in4, in5)",
+ "inputs": [
+  {
+   "shape": [4096, 7168],
+   "stride": [7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 7168],
+   "stride": [7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 7168],
+   "stride": [7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 1],
+   "stride": [1, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [7168],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 7168],
+   "stride": [7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [7168],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 7168],
+   "stride": [7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 7168],
+   "stride": [7168, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 224],
+   "stride": [224, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [7168, 128],
+   "stride": [128, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [7168, 4096],
+   "stride": [4096, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null, null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r010_i0",
+   "storages": [
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 16384,
+     "generated": true
+    },
+    {
+     "nbytes": 14336,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [7168],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r010_i1",
+   "storages": [
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 16384,
+     "generated": true
+    },
+    {
+     "nbytes": 14336,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [7168],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r010_i2",
+   "storages": [
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    },
+    {
+     "nbytes": 16384,
+     "generated": true
+    },
+    {
+     "nbytes": 14336,
+     "generated": true
+    },
+    {
+     "nbytes": 58720256,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [7168],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r010",
+  "calls": [
+   {
+    "name": "fusion_r010_i0",
+    "module": "layers.59.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.6,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i1",
+    "module": "layers.58.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.5,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i2",
+    "module": "layers.57.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.1,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i3",
+    "module": "layers.56.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.1,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i4",
+    "module": "layers.55.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i5",
+    "module": "layers.54.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.9,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i6",
+    "module": "layers.53.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i7",
+    "module": "layers.52.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 125.0,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i8",
+    "module": "layers.51.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.4,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i9",
+    "module": "layers.50.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 125.7,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i10",
+    "module": "layers.49.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.9,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i11",
+    "module": "layers.48.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 121.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i12",
+    "module": "layers.47.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.1,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i13",
+    "module": "layers.46.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.0,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i14",
+    "module": "layers.45.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.7,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i15",
+    "module": "layers.44.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.6,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i16",
+    "module": "layers.43.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i17",
+    "module": "layers.42.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.5,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i18",
+    "module": "layers.41.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.8,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i19",
+    "module": "layers.40.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.4,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i20",
+    "module": "layers.39.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.5,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i21",
+    "module": "layers.38.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i22",
+    "module": "layers.37.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.8,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i23",
+    "module": "layers.36.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i24",
+    "module": "layers.35.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i25",
+    "module": "layers.34.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.5,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i26",
+    "module": "layers.33.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.6,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i27",
+    "module": "layers.32.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.8,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i28",
+    "module": "layers.31.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.6,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i29",
+    "module": "layers.30.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.7,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i30",
+    "module": "layers.29.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.6,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i31",
+    "module": "layers.28.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.4,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i32",
+    "module": "layers.27.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.4,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i33",
+    "module": "layers.26.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i34",
+    "module": "layers.25.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.1,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i35",
+    "module": "layers.24.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.8,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i36",
+    "module": "layers.23.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i37",
+    "module": "layers.22.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i38",
+    "module": "layers.21.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i39",
+    "module": "layers.20.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.8,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i40",
+    "module": "layers.19.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i41",
+    "module": "layers.18.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i42",
+    "module": "layers.17.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.5,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i43",
+    "module": "layers.16.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.7,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i44",
+    "module": "layers.15.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i45",
+    "module": "layers.14.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.4,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i46",
+    "module": "layers.13.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.6,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i47",
+    "module": "layers.12.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.5,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i48",
+    "module": "layers.11.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i49",
+    "module": "layers.10.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.0,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i50",
+    "module": "layers.9.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i51",
+    "module": "layers.8.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.0,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i52",
+    "module": "layers.7.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 122.7,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i53",
+    "module": "layers.6.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i54",
+    "module": "layers.5.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 123.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i55",
+    "module": "layers.4.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i56",
+    "module": "layers.3.feed_forward.shared_experts.w2",
+    "phase": "backward",
+    "measured_us": 124.2,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i57",
+    "module": "layers.2.feed_forward.w2",
+    "phase": "backward",
+    "measured_us": 124.9,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i58",
+    "module": "layers.1.feed_forward.w2",
+    "phase": "backward",
+    "measured_us": 123.3,
+    "ideal_us": 59.7
+   },
+   {
+    "name": "fusion_r010_i59",
+    "module": "layers.0.feed_forward.w2",
+    "phase": "backward",
+    "measured_us": 123.4,
+    "ideal_us": 59.7
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten._fused_rms_norm_backward.default",
+    "kernels": "kernel_cutlass_kernel_torch_vendorquackrmsnormRMSNormBackward_object_at__tensorp | kernel_cutlass_reduce_rows_tensorptrf32gmemalign16o716871681_tensorptrbf16gmemal"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 32ul, 32ul, (ScaleCalcu"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

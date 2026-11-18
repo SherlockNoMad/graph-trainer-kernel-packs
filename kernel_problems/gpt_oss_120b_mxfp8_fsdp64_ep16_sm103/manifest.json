@@ -1,0 +1,146 @@
+{
+  "target": {
+    "torch_git_version": "084f8661f5bb5de149860f74d82f5313766f4256",
+    "cuda": "13.2",
+    "device_capability": [
+      10,
+      3
+    ],
+    "nvidia-cutlass-dsl": "4.8.1",
+    "TORCH_DISABLE_NATIVE_JIT": null
+  },
+  "problems": {
+    "pattern_ff076517a275d8a8a99316de1bc48645132ad0c210cf51ed5ba9d51bb024030a/d24u23dxe5c4t6n6d64fh7qramk24qinees7xd67akpqt6p4l4o6": {
+      "region": "r000",
+      "calls": 36,
+      "measured_us": 665292.6,
+      "ideal_us": 19573.2
+    },
+    "pattern_878b9b746603b753cb6d57557cb43931784e62658c363a8d144be350a9183ac8/dl4wx2qriwicdchd5r4bm6aj7wxbbjppemt6xkokfjvoxe3trtvi": {
+      "region": "r001",
+      "calls": 36,
+      "measured_us": 510324.9,
+      "ideal_us": 3920.4
+    },
+    "pattern_64b322d0868f8bd60187abb4c0cd5d804e7b5da9eda9afaa3de86d3a7e98cd92/dbmeg4477wnuzkft3usjjhjjzfp5enstkkpunnirjsnaq3n36zqk": {
+      "region": "r002",
+      "calls": 35,
+      "measured_us": 76050.6,
+      "ideal_us": 6345.5
+    },
+    "pattern_8711cc2e5e2481ba930c96e98e1ba0e88b3f0135a0ad4cb350538b1cea0568da/df57lv2q7qjawmdy2atkzicvxix5xwi7jzyxkgmo7j4wgx6stgy4": {
+      "region": "r003",
+      "calls": 36,
+      "measured_us": 70127.7,
+      "ideal_us": 17618.4
+    },
+    "pattern_84571610a29191dde2182cfc537ef0c4ce31102d5028aea5c94409c9c99f312b/dld3x6n6tvkfsqomb3erayrhiiqob5ab3unctdmnqiyx3r6kf6rm": {
+      "region": "r004",
+      "calls": 35,
+      "measured_us": 55435.3,
+      "ideal_us": 4063.5
+    },
+    "pattern_afda0aa6f89f7a1cf325ae36e7027617a0e1cf1c129e18590f92a24654f300a0/acddqoujm5shnv5dplshpvjwmhekkidxzihqlrtwnfnjqyh3kfcg": {
+      "region": "r005",
+      "calls": 36,
+      "measured_us": 45182.7,
+      "ideal_us": 1836.0
+    },
+    "pattern_b481238a1aa5085fbf3d6960c981535752c815e2c4ceb8e109a1b5a4fa6adf1e/ag3k7y5ieqvxchlyl6by3dkeixhfdvmd5kullym76fo6iblvlll7": {
+      "region": "r006",
+      "calls": 36,
+      "measured_us": 40077.7,
+      "ideal_us": 1796.4
+    },
+    "pattern_de45a48a86670d38d6204bea84458e640cf3da25de057e375da4a0139c4a496a/d7oqctzu5fvuacn5uaar5zanxunqaoizyptf4pxaj6e6ylb4lfqb": {
+      "region": "r007",
+      "calls": 36,
+      "measured_us": 33294.5,
+      "ideal_us": 4928.4
+    },
+    "pattern_014c7f1530e0bb28a17fd596bc431e1bc5bcbb406ca5db8838c071272f7455e8/atgxg3zzd7hd3r3ty5v54y5zrdt3m7r76bm3t7dbg4cvepclff3i": {
+      "region": "r008",
+      "calls": 36,
+      "measured_us": 15956.0,
+      "ideal_us": 2120.4
+    },
+    "pattern_bef6d4287c74b8727d66d6f7fd0840b9f391726ebe593b4ec023c0516f9d2932/dwfgvwu4gphfwihhe5k7ikjvto2ladtytouzzaxrqommzzpdo5is": {
+      "region": "r009",
+      "calls": 36,
+      "measured_us": 16879.6,
+      "ideal_us": 3920.4
+    },
+    "pattern_891c0c9c0ac143fbcde90bc36b61ec136f68230ba8e88f12c795f3774b88a44b/aj56r5iaosyakh2ei4wh4ghnqvezn6e24gzwnw5vadju3vcbspfz": {
+      "region": "r010",
+      "calls": 8,
+      "measured_us": 16320.8,
+      "ideal_us": 4804.0
+    },
+    "pattern_b157aca6e3000a6e949f5053875ee256992ecb9322d049015f585b3de8e24cd2/af7vlyya5ohp2o4azqkopwdyjoj7m2zbsisr4vj7yffu7wd47psj": {
+      "region": "r011",
+      "calls": 36,
+      "measured_us": 7685.4,
+      "ideal_us": 100.8
+    },
+    "pattern_d2c6752780ac54315206aef8c383058dbf51230843140a513efc5aa8d722989d/aahwlm5vnqroknnpwh2fdwufgq4mhwm22f3ttjgc545yyi65yjvm": {
+      "region": "r013",
+      "calls": 7,
+      "measured_us": 9583.5,
+      "ideal_us": 2491.3
+    },
+    "pattern_83d7f044213d670a499e6b29b7794ecbb588f129260b926a00c32f019c7452f4/a7xu3da7xqoa6tk64vdlqgrp6rapompagot5pqzf634vpqxtdkkx": {
+      "region": "r014",
+      "calls": 36,
+      "measured_us": 7574.8,
+      "ideal_us": 1814.4
+    },
+    "pattern_23554a5cca25974d0375de1f3dd37ba641b98ee4363c56ee8af9a4dcdc52a834/dvcvbew4gaieloiv66jlt3ibkmrygt3ocm4jwk4qp6dzhar5s5bw": {
+      "region": "r015",
+      "calls": 36,
+      "measured_us": 9486.2,
+      "ideal_us": 3924.0
+    },
+    "pattern_094b9ea7e74c9450f9fe3692ba977de2d239b38f9e19c453f951f61a5756664c/d5dywxmjar5spfy5h2hhiqdrr4na3kee7fbi43shltlz7ehmpwli": {
+      "region": "r016",
+      "calls": 36,
+      "measured_us": 9294.7,
+      "ideal_us": 3916.8
+    },
+    "pattern_77b3cbfb4623cf6392b0755fe89ff18caacc44ad4960cfd78562418e68c13bd9/aunprf4levra5pxs5ypjot4mabfm2wm2rs3gqclf4bat2i7hbdn3": {
+      "region": "r018",
+      "calls": 36,
+      "measured_us": 5008.0,
+      "ideal_us": 2448.0
+    },
+    "pattern_49355e705b459265df40610e8e7f753387384754be60f13f6f5e8a7797cd6305/dhlsz5txs7zd7zdl2bi2uk4t66yocihbfdamsjhc24fkmzvzxa3l": {
+      "region": "r019",
+      "calls": 1,
+      "measured_us": 2129.4,
+      "ideal_us": 154.1
+    },
+    "pattern_981adcd534dac44bdd178933c8002dbfc46c04f288f2718e4b5268ab67d17c29/dactgok6mjbgu2jqbr7dmmovxt6h5nwkmtue4ry7cwapxht2lvs3": {
+      "region": "r020",
+      "calls": 1,
+      "measured_us": 1640.3,
+      "ideal_us": 129.7
+    },
+    "pattern_80071225a232fc6a6636923367f1fd4ad23c977f6134951ced4b3acc6d73a9b9/ae35nil2wr2ft2xcgpawfkirzzu5vzuf7remnlegtmgkzucgmtap": {
+      "region": "r021",
+      "calls": 36,
+      "measured_us": 1165.4,
+      "ideal_us": 0.0
+    },
+    "pattern_66ddca5025af039fc8c82be8721516b8eab9441dfa02c1157c9dea847dbc3746/alhjf4t2ctm54foj3sdd5ztx3cl7cqlbbogrcdqsvopwo2dqodst": {
+      "region": "r012",
+      "calls": 1,
+      "measured_us": 1370.1,
+      "ideal_us": 355.9
+    },
+    "pattern_77b3cbfb4623cf6392b0755fe89ff18caacc44ad4960cfd78562418e68c13bd9/dsrequf6z63x5h6a7gofu755ihbg4jsjp567izyde5g5q7kfxown": {
+      "region": "r018",
+      "calls": 72,
+      "measured_us": null,
+      "ideal_us": null
+    }
+  }
+}

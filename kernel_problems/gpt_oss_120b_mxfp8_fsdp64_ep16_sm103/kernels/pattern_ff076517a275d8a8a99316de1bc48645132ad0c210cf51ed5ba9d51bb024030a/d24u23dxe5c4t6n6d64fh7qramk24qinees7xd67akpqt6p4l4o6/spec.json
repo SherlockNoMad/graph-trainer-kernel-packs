@@ -1,0 +1,754 @@
+{
+ "id": "pattern_ff076517a275d8a8a99316de1bc48645132ad0c210cf51ed5ba9d51bb024030a/d24u23dxe5c4t6n6d64fh7qramk24qinees7xd67akpqt6p4l4o6",
+ "signature": "def kernel_function(in0, in1, in2, in3, in4, in5, in6, in7, in8, in9, in10)",
+ "inputs": [
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [5760, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [5760, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "value": "N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "value": "N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [8, 2, 2880],
+   "stride": [5760, 2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 5760],
+   "stride": [5760, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [5760, "N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"],
+   "stride": [1, 5760],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r000_i0",
+   "storages": [
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 754974720,
+     "generated": true
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [5760, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 5760
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [5760, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "value": 65536
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 6,
+     "offset": 0
+    },
+    {
+     "value": 65536
+    }
+   ]
+  },
+  {
+   "call": "fusion_r000_i1",
+   "storages": [
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 754974720,
+     "generated": true
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [5760, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 5760
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [5760, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "value": 65536
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 6,
+     "offset": 0
+    },
+    {
+     "value": 65536
+    }
+   ]
+  },
+  {
+   "call": "fusion_r000_i2",
+   "storages": [
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 754974720,
+     "generated": true
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [5760, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 5760
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [5760, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "value": 65536
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 6,
+     "offset": 0
+    },
+    {
+     "value": 65536
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/gpt_oss_120b",
+  "region": "r000",
+  "calls": [
+   {
+    "name": "fusion_r000_i0",
+    "module": "layers.35.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18500.6,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i1",
+    "module": "layers.34.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18491.4,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i2",
+    "module": "layers.33.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18471.0,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i3",
+    "module": "layers.32.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18418.6,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i4",
+    "module": "layers.31.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18466.5,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i5",
+    "module": "layers.30.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18410.5,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i6",
+    "module": "layers.29.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18331.8,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i7",
+    "module": "layers.28.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18512.2,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i8",
+    "module": "layers.27.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18590.1,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i9",
+    "module": "layers.26.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18462.1,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i10",
+    "module": "layers.25.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18435.0,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i11",
+    "module": "layers.24.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18603.9,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i12",
+    "module": "layers.23.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18390.3,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i13",
+    "module": "layers.22.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18505.0,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i14",
+    "module": "layers.21.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18423.8,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i15",
+    "module": "layers.20.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18545.8,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i16",
+    "module": "layers.19.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18491.8,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i17",
+    "module": "layers.18.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18500.9,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i18",
+    "module": "layers.17.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18471.9,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i19",
+    "module": "layers.16.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18557.8,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i20",
+    "module": "layers.15.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18402.0,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i21",
+    "module": "layers.14.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18477.8,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i22",
+    "module": "layers.13.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18532.5,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i23",
+    "module": "layers.12.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18451.0,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i24",
+    "module": "layers.11.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18606.0,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i25",
+    "module": "layers.10.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18605.5,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i26",
+    "module": "layers.9.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18532.8,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i27",
+    "module": "layers.8.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18437.4,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i28",
+    "module": "layers.7.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18492.0,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i29",
+    "module": "layers.6.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18507.5,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i30",
+    "module": "layers.5.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18446.5,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i31",
+    "module": "layers.4.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18518.2,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i32",
+    "module": "layers.3.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18419.3,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i33",
+    "module": "layers.2.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18491.3,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i34",
+    "module": "layers.1.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18419.2,
+    "ideal_us": 543.7
+   },
+   {
+    "name": "fusion_r000_i35",
+    "module": "layers.0.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 18372.6,
+    "ideal_us": 543.7
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.mul.Scalar",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::AUnaryFunctor<c10:"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::BinaryFunctor<c10:"
+   },
+   {
+    "op": "aten.mul.Scalar",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::AUnaryFunctor<c10:"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::BinaryFunctor<c10:"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::BinaryFunctor<c10:"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::BinaryFunctor<c10:"
+   },
+   {
+    "op": "aten.sigmoid_backward.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::sigmoid_backward_k"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::AUnaryFunctor<c10:"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten.scalar_tensor.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::B"
+   },
+   {
+    "op": "aten.gt.Scalar",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.lt.Scalar",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.logical_and_.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::BinaryFunctor<bool"
+   },
+   {
+    "op": "aten.where.self",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.scalar_tensor.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::B"
+   },
+   {
+    "op": "aten.lt.Scalar",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.where.self",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.stack.default",
+    "kernels": "void at::native::(anonymous namespace)::CatArrayBatchedCopy_vectorized<at::nativ"
+   },
+   {
+    "op": "aten.new_zeros.default",
+    "kernels": "Memset (Device)"
+   },
+   {
+    "op": "aten.index_add.default",
+    "kernels": "Memcpy DtoD (Device -> Device) | Memset (Device)"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

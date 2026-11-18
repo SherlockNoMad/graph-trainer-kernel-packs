@@ -1,0 +1,636 @@
+{
+ "id": "pattern_77b3cbfb4623cf6392b0755fe89ff18caacc44ad4960cfd78562418e68c13bd9/dsrequf6z63x5h6a7gofu755ihbg4jsjp567izyde5g5q7kfxown",
+ "signature": "def kernel_function(in0, in1)",
+ "inputs": [
+  {
+   "shape": [128],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r018_i1",
+   "storages": [
+    {
+     "nbytes": 1024,
+     "generated": false
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [128],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r018_i2",
+   "storages": [
+    {
+     "nbytes": 1024,
+     "generated": false
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [128],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r018_i4",
+   "storages": [
+    {
+     "nbytes": 1024,
+     "generated": false
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [128],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/gpt_oss_120b",
+  "region": "r018",
+  "calls": [
+   {
+    "name": "fusion_r018_i1",
+    "module": "layers.0.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i2",
+    "module": "layers.0.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i4",
+    "module": "layers.1.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i5",
+    "module": "layers.1.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i7",
+    "module": "layers.2.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i8",
+    "module": "layers.2.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i10",
+    "module": "layers.3.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i11",
+    "module": "layers.3.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i13",
+    "module": "layers.4.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i14",
+    "module": "layers.4.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i16",
+    "module": "layers.5.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i17",
+    "module": "layers.5.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i19",
+    "module": "layers.6.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i20",
+    "module": "layers.6.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i22",
+    "module": "layers.7.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i23",
+    "module": "layers.7.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i25",
+    "module": "layers.8.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i26",
+    "module": "layers.8.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i28",
+    "module": "layers.9.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i29",
+    "module": "layers.9.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i31",
+    "module": "layers.10.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i32",
+    "module": "layers.10.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i34",
+    "module": "layers.11.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i35",
+    "module": "layers.11.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i37",
+    "module": "layers.12.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i38",
+    "module": "layers.12.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i40",
+    "module": "layers.13.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i41",
+    "module": "layers.13.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i43",
+    "module": "layers.14.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i44",
+    "module": "layers.14.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i46",
+    "module": "layers.15.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i47",
+    "module": "layers.15.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i49",
+    "module": "layers.16.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i50",
+    "module": "layers.16.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i52",
+    "module": "layers.17.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i53",
+    "module": "layers.17.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i55",
+    "module": "layers.18.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i56",
+    "module": "layers.18.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i58",
+    "module": "layers.19.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i59",
+    "module": "layers.19.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i61",
+    "module": "layers.20.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i62",
+    "module": "layers.20.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i64",
+    "module": "layers.21.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i65",
+    "module": "layers.21.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i67",
+    "module": "layers.22.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i68",
+    "module": "layers.22.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i70",
+    "module": "layers.23.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i71",
+    "module": "layers.23.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i73",
+    "module": "layers.24.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i74",
+    "module": "layers.24.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i76",
+    "module": "layers.25.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i77",
+    "module": "layers.25.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i79",
+    "module": "layers.26.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i80",
+    "module": "layers.26.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i82",
+    "module": "layers.27.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i83",
+    "module": "layers.27.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i85",
+    "module": "layers.28.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i86",
+    "module": "layers.28.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i88",
+    "module": "layers.29.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i89",
+    "module": "layers.29.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i91",
+    "module": "layers.30.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i92",
+    "module": "layers.30.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i94",
+    "module": "layers.31.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i95",
+    "module": "layers.31.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i97",
+    "module": "layers.32.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i98",
+    "module": "layers.32.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i100",
+    "module": "layers.33.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i101",
+    "module": "layers.33.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i103",
+    "module": "layers.34.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i104",
+    "module": "layers.34.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i106",
+    "module": "layers.35.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   },
+   {
+    "name": "fusion_r018_i107",
+    "module": "layers.35.feed_forward.routed_experts",
+    "phase": "forward",
+    "measured_us": null,
+    "ideal_us": null
+   }
+  ],
+  "reference_kernels": []
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

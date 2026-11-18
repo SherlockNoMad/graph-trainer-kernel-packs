@@ -1,0 +1,501 @@
+{
+ "id": "pattern_014c7f1530e0bb28a17fd596bc431e1bc5bcbb406ca5db8838c071272f7455e8/atgxg3zzd7hd3r3ty5v54y5zrdt3m7r76bm3t7dbg4cvepclff3i",
+ "signature": "def kernel_function(in0, in1, in2, in3)",
+ "inputs": [
+  {
+   "shape": [16384, 4096],
+   "stride": [4096, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 64, 64],
+   "stride": [4096, 64, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 64, 1],
+   "stride": [1, 16384, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 64],
+   "stride": [1, 16384],
+   "dtype": "float32",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [16384, 64, 64],
+   "stride": [4096, 64, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [64],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r008_i0",
+   "storages": [
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 2097152,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [16384, 4096],
+     "stride": [4096, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64, 64],
+     "stride": [4096, 64, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64, 1],
+     "stride": [1, 16384, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64],
+     "stride": [1, 16384],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r008_i1",
+   "storages": [
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 2097152,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [16384, 4096],
+     "stride": [4096, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64, 64],
+     "stride": [4096, 64, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64, 1],
+     "stride": [1, 16384, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64],
+     "stride": [1, 16384],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r008_i2",
+   "storages": [
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 2097152,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [16384, 4096],
+     "stride": [4096, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64, 64],
+     "stride": [4096, 64, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64, 1],
+     "stride": [1, 16384, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 64],
+     "stride": [1, 16384],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/gpt_oss_120b",
+  "region": "r008",
+  "calls": [
+   {
+    "name": "fusion_r008_i0",
+    "module": "layers.35.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.6,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i1",
+    "module": "layers.34.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.8,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i2",
+    "module": "layers.33.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 440.7,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i3",
+    "module": "layers.32.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 444.1,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i4",
+    "module": "layers.31.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 444.9,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i5",
+    "module": "layers.30.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.8,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i6",
+    "module": "layers.29.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 441.3,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i7",
+    "module": "layers.28.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.7,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i8",
+    "module": "layers.27.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.0,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i9",
+    "module": "layers.26.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 444.6,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i10",
+    "module": "layers.25.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.8,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i11",
+    "module": "layers.24.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 444.3,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i12",
+    "module": "layers.23.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.2,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i13",
+    "module": "layers.22.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.3,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i14",
+    "module": "layers.21.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.8,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i15",
+    "module": "layers.20.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.2,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i16",
+    "module": "layers.19.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 444.5,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i17",
+    "module": "layers.18.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 441.8,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i18",
+    "module": "layers.17.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.8,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i19",
+    "module": "layers.16.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.7,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i20",
+    "module": "layers.15.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 444.4,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i21",
+    "module": "layers.14.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.6,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i22",
+    "module": "layers.13.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.8,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i23",
+    "module": "layers.12.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.0,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i24",
+    "module": "layers.11.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.4,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i25",
+    "module": "layers.10.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 441.4,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i26",
+    "module": "layers.9.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.9,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i27",
+    "module": "layers.8.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.0,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i28",
+    "module": "layers.7.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.9,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i29",
+    "module": "layers.6.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.5,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i30",
+    "module": "layers.5.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 441.7,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i31",
+    "module": "layers.4.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.5,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i32",
+    "module": "layers.3.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 443.0,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i33",
+    "module": "layers.2.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 445.9,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i34",
+    "module": "layers.1.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 442.9,
+    "ideal_us": 58.9
+   },
+   {
+    "name": "fusion_r008_i35",
+    "module": "layers.0.attention.inner_attention",
+    "phase": "backward",
+    "measured_us": 446.2,
+    "ideal_us": 58.9
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::BinaryFunctor<c10:"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<c10::BFloat16, at::n"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten.sigmoid_backward.default",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.neg.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::neg_kernel_cuda(at"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "Memset (Device) | void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::converting_copy_ke"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

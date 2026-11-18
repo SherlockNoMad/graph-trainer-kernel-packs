@@ -1,0 +1,452 @@
+{
+ "id": "pattern_981adcd534dac44bdd178933c8002dbfc46c04f288f2718e4b5268ab67d17c29/dactgok6mjbgu2jqbr7dmmovxt6h5nwkmtue4ry7cwapxht2lvs3",
+ "signature": "def kernel_function(in0, in1, in2, in3, in4, in5)",
+ "inputs": [
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [65536, 1],
+   "stride": [1, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [65536, 2880],
+   "stride": [1, 0],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2880],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [16384, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 1],
+   "stride": [1, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [],
+   "stride": [],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 92],
+   "stride": [92, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r020_i0",
+   "storages": [
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 262144,
+     "generated": true
+    },
+    {
+     "nbytes": 94371840,
+     "generated": true
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    },
+    {
+     "nbytes": 94371840,
+     "generated": true
+    },
+    {
+     "nbytes": 5760,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [1, 0],
+     "dtype": "int64",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [2880],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/gpt_oss_120b",
+  "region": "r020",
+  "calls": [
+   {
+    "name": "fusion_r020_i0",
+    "module": "lm_head",
+    "phase": "forward",
+    "measured_us": 1640.3,
+    "ideal_us": 129.7
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::nati"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::converting_copy_ke"
+   },
+   {
+    "op": "torchtitan.deterministic_scatter_add.default",
+    "kernels": "Memcpy DtoD (Device -> Device) | Memset (Device)"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten._fused_rms_norm.default",
+    "kernels": "kernel_cutlass_kernel_torch_vendorquackrmsnormRMSNorm_object_at__tensorptrbf16gm"
+   },
+   {
+    "op": "aten.zeros_like.default",
+    "kernels": "Memset (Device)"
+   },
+   {
+    "op": "aten.new_zeros.default",
+    "kernels": "Memset (Device)"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 1ul, 32ul, (ScaleCalcul"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

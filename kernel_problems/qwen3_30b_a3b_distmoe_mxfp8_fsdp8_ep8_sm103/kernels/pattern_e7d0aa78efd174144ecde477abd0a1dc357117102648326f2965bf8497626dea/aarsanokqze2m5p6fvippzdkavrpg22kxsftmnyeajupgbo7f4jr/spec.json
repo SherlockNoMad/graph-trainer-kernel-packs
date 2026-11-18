@@ -1,0 +1,168 @@
+{
+ "id": "pattern_e7d0aa78efd174144ecde477abd0a1dc357117102648326f2965bf8497626dea/aarsanokqze2m5p6fvippzdkavrpg22kxsftmnyeajupgbo7f4jr",
+ "signature": "def kernel_function(in0, in1, in2, in3, in4, in5)",
+ "inputs": [
+  {
+   "shape": [32768, 1],
+   "stride": [1, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [32768, 2048],
+   "stride": [2048, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [32768, 2048],
+   "stride": [2048, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2048],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [32768, 2048],
+   "stride": [2048, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [32768],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [2048],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [151936, 2048],
+   "stride": [2048, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r010_i0",
+   "storages": [
+    {
+     "nbytes": 131072,
+     "generated": true
+    },
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 4096,
+     "generated": true
+    },
+    {
+     "nbytes": 134217728,
+     "generated": true
+    },
+    {
+     "nbytes": 262144,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [32768, 1],
+     "stride": [1, 1],
+     "dtype": "float32",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [32768, 2048],
+     "stride": [2048, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [32768, 2048],
+     "stride": [2048, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [2048],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [32768, 2048],
+     "stride": [2048, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [32768],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 5,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/qwen3_30b",
+  "region": "r010",
+  "calls": [
+   {
+    "name": "fusion_r010_i0",
+    "module": "layers.0.attention_norm",
+    "phase": "backward",
+    "measured_us": 782.0,
+    "ideal_us": 166.8
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten._fused_rms_norm_backward.default",
+    "kernels": "kernel_cutlass_kernel_torch_vendorquackrmsnormRMSNormBackward_object_at__tensorp | kernel_cutlass_reduce_rows_tensorptrf32gmemalign16o204820481_tensorptrbf16gmemal"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten.embedding_dense_backward.default",
+    "kernels": "Memset (Device) | void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arang"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

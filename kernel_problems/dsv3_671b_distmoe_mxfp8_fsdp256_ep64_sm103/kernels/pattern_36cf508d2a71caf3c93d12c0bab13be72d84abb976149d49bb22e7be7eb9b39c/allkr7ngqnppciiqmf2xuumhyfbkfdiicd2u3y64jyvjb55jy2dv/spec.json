@@ -1,0 +1,931 @@
+{
+ "id": "pattern_36cf508d2a71caf3c93d12c0bab13be72d84abb976149d49bb22e7be7eb9b39c/allkr7ngqnppciiqmf2xuumhyfbkfdiicd2u3y64jyvjb55jy2dv",
+ "signature": "def kernel_function(in0, in1, in2, in3, in4, in5, in6, in7)",
+ "inputs": [
+  {
+   "shape": [4096, 256],
+   "stride": [256, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [256],
+   "stride": [1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 1],
+   "stride": [1, 1],
+   "dtype": "bool",
+   "device": "cuda"
+  },
+  {
+   "shape": [256],
+   "stride": [1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 1],
+   "stride": [1, 1],
+   "dtype": "bool",
+   "device": "cuda"
+  },
+  {
+   "shape": [],
+   "stride": [],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [],
+   "stride": [],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 1],
+   "stride": [1, 1],
+   "dtype": "bool",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [4096, 8],
+   "stride": [8, 1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 256],
+   "stride": [256, 1],
+   "dtype": "bool",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 8],
+   "stride": [8, 1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 8],
+   "stride": [8, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [3, 6],
+ "output_aliases": [null, null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r000_i0",
+   "storages": [
+    {
+     "nbytes": 4194304,
+     "generated": true
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    },
+    {
+     "nbytes": 4096,
+     "generated": false
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    },
+    {
+     "nbytes": 16,
+     "generated": false
+    },
+    {
+     "nbytes": 4,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "float32",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "int64",
+     "storage": 4,
+     "offset": 8
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "float32",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r000_i1",
+   "storages": [
+    {
+     "nbytes": 4194304,
+     "generated": true
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    },
+    {
+     "nbytes": 4096,
+     "generated": false
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    },
+    {
+     "nbytes": 16,
+     "generated": false
+    },
+    {
+     "nbytes": 4,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "float32",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "int64",
+     "storage": 4,
+     "offset": 8
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "float32",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r000_i2",
+   "storages": [
+    {
+     "nbytes": 4194304,
+     "generated": true
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    },
+    {
+     "nbytes": 4096,
+     "generated": false
+    },
+    {
+     "nbytes": 1024,
+     "generated": true
+    },
+    {
+     "nbytes": 16,
+     "generated": false
+    },
+    {
+     "nbytes": 4,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 256],
+     "stride": [256, 1],
+     "dtype": "float32",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "float32",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "float32",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "int64",
+     "storage": 4,
+     "offset": 8
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "float32",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 2,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r000",
+  "calls": [
+   {
+    "name": "fusion_r000_i0",
+    "module": "layers.3.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 321.3,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i1",
+    "module": "layers.4.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i2",
+    "module": "layers.5.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.2,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i3",
+    "module": "layers.6.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 322.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i4",
+    "module": "layers.7.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.7,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i5",
+    "module": "layers.8.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.1,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i6",
+    "module": "layers.9.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i7",
+    "module": "layers.10.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 321.0,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i8",
+    "module": "layers.11.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i9",
+    "module": "layers.12.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.0,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i10",
+    "module": "layers.13.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i11",
+    "module": "layers.14.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i12",
+    "module": "layers.15.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.9,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i13",
+    "module": "layers.16.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.1,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i14",
+    "module": "layers.17.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.9,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i15",
+    "module": "layers.18.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.1,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i16",
+    "module": "layers.19.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 321.3,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i17",
+    "module": "layers.20.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i18",
+    "module": "layers.21.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i19",
+    "module": "layers.22.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i20",
+    "module": "layers.23.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.0,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i21",
+    "module": "layers.24.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.7,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i22",
+    "module": "layers.25.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.1,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i23",
+    "module": "layers.26.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i24",
+    "module": "layers.27.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.5,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i25",
+    "module": "layers.28.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 316.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i26",
+    "module": "layers.29.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i27",
+    "module": "layers.30.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i28",
+    "module": "layers.31.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.9,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i29",
+    "module": "layers.32.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i30",
+    "module": "layers.33.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i31",
+    "module": "layers.34.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.3,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i32",
+    "module": "layers.35.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.7,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i33",
+    "module": "layers.36.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i34",
+    "module": "layers.37.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.7,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i35",
+    "module": "layers.38.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.5,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i36",
+    "module": "layers.39.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i37",
+    "module": "layers.40.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i38",
+    "module": "layers.41.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.1,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i39",
+    "module": "layers.42.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i40",
+    "module": "layers.43.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.2,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i41",
+    "module": "layers.44.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i42",
+    "module": "layers.45.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.3,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i43",
+    "module": "layers.46.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i44",
+    "module": "layers.47.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.7,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i45",
+    "module": "layers.48.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i46",
+    "module": "layers.49.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 321.2,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i47",
+    "module": "layers.50.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 317.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i48",
+    "module": "layers.51.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 321.2,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i49",
+    "module": "layers.52.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.6,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i50",
+    "module": "layers.53.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.2,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i51",
+    "module": "layers.54.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.8,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i52",
+    "module": "layers.55.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.0,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i53",
+    "module": "layers.56.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.7,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i54",
+    "module": "layers.57.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 320.1,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i55",
+    "module": "layers.58.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 318.4,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i56",
+    "module": "layers.59.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.9,
+    "ideal_us": 0.9
+   },
+   {
+    "name": "fusion_r000_i57",
+    "module": "layers.60.feed_forward.router",
+    "phase": "forward",
+    "measured_us": 319.4,
+    "ideal_us": 0.9
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.sigmoid.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cud"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.topk.default",
+    "kernels": "void at::native::bitonicSortKVInPlace<2, -1, 16, 16, float, long, at::native::GT | void at::native::sbtopk::gatherTopK<float, unsigned int, 2, false>(at::cuda::det"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.topk.default",
+    "kernels": "void at::native::sbtopk::gatherTopK<float, unsigned int, 2, false>(at::cuda::det"
+   },
+   {
+    "op": "aten.ones_like.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>,"
+   },
+   {
+    "op": "aten.scatter_.value",
+    "kernels": "void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_sc"
+   },
+   {
+    "op": "aten.masked_fill.Scalar",
+    "kernels": "Memcpy DtoD (Device -> Device) | void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.topk.default",
+    "kernels": "void at::native::sbtopk::gatherTopK<float, unsigned int, 2, false>(at::cuda::det"
+   },
+   {
+    "op": "aten.gather.default",
+    "kernels": "void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_sc"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.zeros_like.default",
+    "kernels": "Memset (Device)"
+   },
+   {
+    "op": "aten.scatter_.value",
+    "kernels": "void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_sc"
+   },
+   {
+    "op": "aten.bitwise_not.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::bitwise_not_kernel"
+   },
+   {
+    "op": "aten.bitwise_and.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "Memset (Device) | void at::native::reduce_kernel<128, 4, at::native::ReduceOp<long, at::native::fu"
+   },
+   {
+    "op": "aten.add_.Tensor",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctor_add<float>,"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "Memset (Device) | void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.linalg_vector_norm.default",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::N"
+   },
+   {
+    "op": "aten.clamp_min.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespa"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.bitwise_not.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::bitwise_not_kernel"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::nati"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "Memset (Device) | void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.linalg_vector_norm.default",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::N"
+   },
+   {
+    "op": "aten.clamp_min.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespa"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<floa"
+   },
+   {
+    "op": "aten.sum.default",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.clamp_min.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::(anonymous namespace)::"
+   },
+   {
+    "op": "aten.reciprocal.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::reciprocal_kernel_cuda("
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<floa"
+   },
+   {
+    "op": "aten.add_.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<fl"
+   },
+   {
+    "op": "aten.masked_fill.Scalar",
+    "kernels": "Memcpy DtoD (Device -> Device) | void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.masked_fill.Scalar",
+    "kernels": "Memcpy DtoD (Device -> Device) | void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

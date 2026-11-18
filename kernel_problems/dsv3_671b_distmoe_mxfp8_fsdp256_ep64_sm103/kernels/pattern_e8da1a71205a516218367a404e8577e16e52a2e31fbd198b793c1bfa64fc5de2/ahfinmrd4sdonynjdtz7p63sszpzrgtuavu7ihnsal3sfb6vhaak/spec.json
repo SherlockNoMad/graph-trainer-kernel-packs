@@ -1,0 +1,212 @@
+{
+ "id": "pattern_e8da1a71205a516218367a404e8577e16e52a2e31fbd198b793c1bfa64fc5de2/ahfinmrd4sdonynjdtz7p63sszpzrgtuavu7ihnsal3sfb6vhaak",
+ "signature": "def kernel_function(in0, in1)",
+ "inputs": [
+  {
+   "shape": [4096, 36864],
+   "stride": [36864, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 18432],
+   "stride": [18432, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [4096, 18432],
+   "stride": [1, 4096],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [18432, 128],
+   "stride": [128, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 36864],
+   "stride": [36864, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [36864, 4096],
+   "stride": [4096, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 1152],
+   "stride": [1152, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [36864, 128],
+   "stride": [128, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null, null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r011_i58",
+   "storages": [
+    {
+     "nbytes": 301989888,
+     "generated": true
+    },
+    {
+     "nbytes": 150994944,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 36864],
+     "stride": [36864, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 18432],
+     "stride": [18432, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r011_i59",
+   "storages": [
+    {
+     "nbytes": 301989888,
+     "generated": true
+    },
+    {
+     "nbytes": 150994944,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 36864],
+     "stride": [36864, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 18432],
+     "stride": [18432, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r011_i60",
+   "storages": [
+    {
+     "nbytes": 301989888,
+     "generated": true
+    },
+    {
+     "nbytes": 150994944,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 36864],
+     "stride": [36864, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [4096, 18432],
+     "stride": [18432, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r011",
+  "calls": [
+   {
+    "name": "fusion_r011_i58",
+    "module": "layers.2.feed_forward.w13",
+    "phase": "backward/recompute",
+    "measured_us": 356.2,
+    "ideal_us": 134.1
+   },
+   {
+    "name": "fusion_r011_i59",
+    "module": "layers.1.feed_forward.w13",
+    "phase": "backward/recompute",
+    "measured_us": 356.4,
+    "ideal_us": 134.1
+   },
+   {
+    "name": "fusion_r011_i60",
+    "module": "layers.0.feed_forward.w13",
+    "phase": "backward/recompute",
+    "measured_us": 358.1,
+    "ideal_us": 134.1
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "torchtitan.silu_and_mul.default",
+    "kernels": "_silu_and_mul_forward_kernel"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 32ul, 32ul, (ScaleCalcu"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchtitan.silu_and_mul_backward.default",
+    "kernels": "_silu_and_mul_backward_kernel"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 32ul, 32ul, (ScaleCalcu"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

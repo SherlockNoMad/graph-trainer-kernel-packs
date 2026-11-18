@@ -1,0 +1,92 @@
+{
+  "target": {
+    "torch_git_version": "084f8661f5bb5de149860f74d82f5313766f4256",
+    "cuda": "13.2",
+    "device_capability": [
+      10,
+      3
+    ],
+    "nvidia-cutlass-dsl": "4.8.1",
+    "TORCH_DISABLE_NATIVE_JIT": null
+  },
+  "problems": {
+    "pattern_0fdba30d05e0cc3cef49e887a5f83a823ac123b9cd4cc7cf3b40dc959438eb2d/al6uziplhf75gjmghb2m7xu6muouze23n6t74cmk3qav3lnrm6h3": {
+      "region": "r000",
+      "calls": 6,
+      "measured_us": 3112.9,
+      "ideal_us": 415.2
+    },
+    "pattern_e44d5ecb45eba92a8031ea84cf737c1a55d5c3308611c527099d13c008c9eab2/azgjfmra5kmdc6gjp7uxryx7nqyv675opn64z3h7ddtrjab4caqf": {
+      "region": "r001",
+      "calls": 6,
+      "measured_us": 1882.2,
+      "ideal_us": 207.0
+    },
+    "pattern_03ac2bd170dd6a7ef577d7b507168c7ec8892fbfcbced1ebbe87c4740941d04f/a5yrtnbhj526ieoo63nxgja24cx45mqhidraoj2uquju7jtppplb": {
+      "region": "r002",
+      "calls": 5,
+      "measured_us": 1613.7,
+      "ideal_us": 56.5
+    },
+    "pattern_157215941e5f259a125f6454ea782064cba5d5ef9821b6ee441c921ad976c67d/aclkmyqyehk7tbc3bxi3nqp6juxowwqypwsntowoapc34obllkoj": {
+      "region": "r003",
+      "calls": 6,
+      "measured_us": 1692.0,
+      "ideal_us": 177.6
+    },
+    "pattern_4fad0e7dac5116f1f1e1b3fa3bf4d0f7d55ad2a17ba18a97337d30c4c56fcd4e/abfhezxawmnvcxfft5edhktrt34pieg25x36ch4cyujjw5bbp4eu": {
+      "region": "r004",
+      "calls": 6,
+      "measured_us": 1607.5,
+      "ideal_us": 266.4
+    },
+    "pattern_47742e295090b19e0b074523f63306a3b97791f686cfda773a72852fe6b63d9c/av76scgjjc4wshdtwapt5hoxji3gzzxhc3rchm2ubeva6fnndlq2": {
+      "region": "r005",
+      "calls": 5,
+      "measured_us": 1072.6,
+      "ideal_us": 25.5
+    },
+    "pattern_f4672510f60b24e0706afc71bfd376361681c0c367b71088b839f0d4aee14087/arsx2ttrwj2j2xd74zvsezacj7h2ortfvmajvcjt5jj5ulihdr5g": {
+      "region": "r006",
+      "calls": 4,
+      "measured_us": 1151.6,
+      "ideal_us": 108.0
+    },
+    "pattern_3c0c0c3537276f8b2acafd28b8760f2f440f611758de472894e86dee247b3e90/ajlmnqp4dkgv2qio2kh56s3kwh5xquc4ksqechpq3u3fqchkd52h": {
+      "region": "r007",
+      "calls": 6,
+      "measured_us": 1191.3,
+      "ideal_us": 204.6
+    },
+    "pattern_f1ca63decd3491f7eb8aa776606b3a4db41971ff9cac4bf1a6e4ecac65bd8a83/arvmekfalrkbmcqzpzjsfdmmxb7f7qjylgzp3tkz7644h6ejemto": {
+      "region": "r010",
+      "calls": 5,
+      "measured_us": 690.7,
+      "ideal_us": 48.5
+    },
+    "pattern_efc5582984fdff632124ff993d0166f540e41a603b830ad4bc68333a23c9fb17/avlyliziygo4ndlj7nxruuktkzpvzj3222sq6tlaeu7tsreyxcfj": {
+      "region": "r012",
+      "calls": 5,
+      "measured_us": 705.3,
+      "ideal_us": 108.5
+    },
+    "pattern_efc5582984fdff632124ff993d0166f540e41a603b830ad4bc68333a23c9fb17/arvsvny2wkew2w4kak4d5jzdhgh7x32uh2oautty5r5p7rvbl57g": {
+      "region": "r011",
+      "calls": 5,
+      "measured_us": 518.1,
+      "ideal_us": 72.5
+    },
+    "pattern_efc5582984fdff632124ff993d0166f540e41a603b830ad4bc68333a23c9fb17/akm7fmafnwntld5ctsfnxofzadcjqt2cqkbqgdmelbrsnck2rt2d": {
+      "region": "r011",
+      "calls": 1,
+      "measured_us": 201.6,
+      "ideal_us": 29.0
+    },
+    "pattern_d0e85a34b56d3d3863e6d14d3e5c6143b707769021430d5fa7ba3d7df8151ad3/awdbw6kh6f6vayimz26gnvo46psgkdw4i3xblbe72273vf6thwdp": {
+      "region": "r009",
+      "calls": 5,
+      "measured_us": null,
+      "ideal_us": null
+    }
+  }
+}

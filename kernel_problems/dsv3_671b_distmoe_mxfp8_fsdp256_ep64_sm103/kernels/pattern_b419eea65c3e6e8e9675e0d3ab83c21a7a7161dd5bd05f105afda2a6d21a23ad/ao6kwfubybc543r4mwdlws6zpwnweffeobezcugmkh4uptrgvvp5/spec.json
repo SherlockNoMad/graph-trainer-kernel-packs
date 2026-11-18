@@ -1,0 +1,133 @@
+{
+ "id": "pattern_b419eea65c3e6e8e9675e0d3ab83c21a7a7161dd5bd05f105afda2a6d21a23ad/ao6kwfubybc543r4mwdlws6zpwnweffeobezcugmkh4uptrgvvp5",
+ "signature": "def kernel_function(in0)",
+ "inputs": [
+  {
+   "shape": [4096, 36864],
+   "stride": [36864, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [4096, 18432],
+   "stride": [18432, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [4096, 576],
+   "stride": [576, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r027_i0",
+   "storages": [
+    {
+     "nbytes": 301989888,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 36864],
+     "stride": [36864, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r027_i1",
+   "storages": [
+    {
+     "nbytes": 301989888,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 36864],
+     "stride": [36864, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r027_i2",
+   "storages": [
+    {
+     "nbytes": 301989888,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [4096, 36864],
+     "stride": [36864, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r027",
+  "calls": [
+   {
+    "name": "fusion_r027_i0",
+    "module": "layers.0.feed_forward.w2",
+    "phase": "forward",
+    "measured_us": 130.9,
+    "ideal_us": 66.2
+   },
+   {
+    "name": "fusion_r027_i1",
+    "module": "layers.1.feed_forward.w2",
+    "phase": "forward",
+    "measured_us": 130.7,
+    "ideal_us": 66.2
+   },
+   {
+    "name": "fusion_r027_i2",
+    "module": "layers.2.feed_forward.w2",
+    "phase": "forward",
+    "measured_us": 130.7,
+    "ideal_us": 66.2
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "torchtitan.silu_and_mul.default",
+    "kernels": "_silu_and_mul_forward_kernel"
+   },
+   {
+    "op": "torchao.mxfp8_quantize.default",
+    "kernels": "void mxfp8_quantize_kernel<__nv_bfloat16, __nv_fp8_e4m3, 32ul, 32ul, (ScaleCalcu"
+   },
+   {
+    "op": "torchao.triton_mx_block_rearrange.default",
+    "kernels": "triton_scale_swizzle"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

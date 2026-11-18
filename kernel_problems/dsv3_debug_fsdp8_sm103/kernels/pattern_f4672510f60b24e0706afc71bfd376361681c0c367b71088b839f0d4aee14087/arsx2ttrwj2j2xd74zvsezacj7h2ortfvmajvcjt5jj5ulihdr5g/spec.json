@@ -1,0 +1,922 @@
+{
+ "id": "pattern_f4672510f60b24e0706afc71bfd376361681c0c367b71088b839f0d4aee14087/arsx2ttrwj2j2xd74zvsezacj7h2ortfvmajvcjt5jj5ulihdr5g",
+ "signature": "def kernel_function(in0, in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12)",
+ "inputs": [
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256],
+   "stride": [1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 3],
+   "stride": [3, 1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 8],
+   "stride": [8, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 8],
+   "stride": [8, 1],
+   "dtype": "bool",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 1],
+   "stride": [1, 1],
+   "dtype": "bool",
+   "device": "cuda"
+  },
+  {
+   "shape": [],
+   "stride": [],
+   "dtype": "int64",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256],
+   "stride": [1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256, 16384],
+   "stride": [1, 256],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [49152],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [49152],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": [49152, 256],
+   "stride": [256, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [49152, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 1],
+   "stride": [1, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [49152, 256],
+   "stride": [256, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [256, 49152],
+   "stride": [1, 256],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 8],
+   "stride": [8, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 3],
+   "stride": [3, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 8],
+   "stride": [8, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 1],
+   "stride": [1, 1],
+   "dtype": "float32",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r006_i0",
+   "storages": [
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 512,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 512,
+     "generated": true
+    },
+    {
+     "nbytes": 393216,
+     "generated": false
+    },
+    {
+     "nbytes": 524288,
+     "generated": true
+    },
+    {
+     "nbytes": 131072,
+     "generated": false
+    },
+    {
+     "nbytes": 16384,
+     "generated": false
+    },
+    {
+     "nbytes": 16,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 6,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 7,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 3],
+     "stride": [3, 1],
+     "dtype": "int64",
+     "storage": 8,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 9,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 8],
+     "stride": [8, 1],
+     "dtype": "bool",
+     "storage": 10,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 11,
+     "offset": 0
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "int64",
+     "storage": 12,
+     "offset": 8
+    }
+   ]
+  },
+  {
+   "call": "fusion_r006_i1",
+   "storages": [
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 512,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 512,
+     "generated": true
+    },
+    {
+     "nbytes": 393216,
+     "generated": false
+    },
+    {
+     "nbytes": 524288,
+     "generated": true
+    },
+    {
+     "nbytes": 131072,
+     "generated": false
+    },
+    {
+     "nbytes": 16384,
+     "generated": false
+    },
+    {
+     "nbytes": 16,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 6,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 7,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 3],
+     "stride": [3, 1],
+     "dtype": "int64",
+     "storage": 8,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 9,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 8],
+     "stride": [8, 1],
+     "dtype": "bool",
+     "storage": 10,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 11,
+     "offset": 0
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "int64",
+     "storage": 12,
+     "offset": 8
+    }
+   ]
+  },
+  {
+   "call": "fusion_r006_i2",
+   "storages": [
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 512,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 8388608,
+     "generated": true
+    },
+    {
+     "nbytes": 512,
+     "generated": true
+    },
+    {
+     "nbytes": 393216,
+     "generated": false
+    },
+    {
+     "nbytes": 524288,
+     "generated": true
+    },
+    {
+     "nbytes": 131072,
+     "generated": false
+    },
+    {
+     "nbytes": 16384,
+     "generated": false
+    },
+    {
+     "nbytes": 16,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 2,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 3,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 4,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 5,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 256],
+     "stride": [256, 1],
+     "dtype": "bfloat16",
+     "storage": 6,
+     "offset": 0
+    },
+    {
+     "shape": [256],
+     "stride": [1],
+     "dtype": "bfloat16",
+     "storage": 7,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 3],
+     "stride": [3, 1],
+     "dtype": "int64",
+     "storage": 8,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 8],
+     "stride": [8, 1],
+     "dtype": "float32",
+     "storage": 9,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 8],
+     "stride": [8, 1],
+     "dtype": "bool",
+     "storage": 10,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 1],
+     "stride": [1, 1],
+     "dtype": "bool",
+     "storage": 11,
+     "offset": 0
+    },
+    {
+     "shape": [],
+     "stride": [],
+     "dtype": "int64",
+     "storage": 12,
+     "offset": 8
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_debug",
+  "region": "r006",
+  "calls": [
+   {
+    "name": "fusion_r006_i0",
+    "module": "layers.4.feed_forward.router.aux_loss",
+    "phase": "backward/recompute",
+    "measured_us": 288.7,
+    "ideal_us": 27.0
+   },
+   {
+    "name": "fusion_r006_i1",
+    "module": "layers.3.feed_forward.router.aux_loss",
+    "phase": "backward/recompute",
+    "measured_us": 287.4,
+    "ideal_us": 27.0
+   },
+   {
+    "name": "fusion_r006_i2",
+    "module": "layers.2.feed_forward.router.aux_loss",
+    "phase": "backward/recompute",
+    "measured_us": 286.8,
+    "ideal_us": 27.0
+   },
+   {
+    "name": "fusion_r006_i3",
+    "module": "layers.1.feed_forward.router.aux_loss",
+    "phase": "backward/recompute",
+    "measured_us": 288.7,
+    "ideal_us": 27.0
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten._fused_rms_norm.default",
+    "kernels": "kernel_cutlass_kernel_torch_vendorquackrmsnormRMSNorm_object_at__tensorptrbf16gm"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten._fused_rms_norm_backward.default",
+    "kernels": "kernel_cutlass_kernel_torch_vendorquackrmsnormRMSNormBackward_object_at__tensorp | kernel_cutlass_reduce_rows_tensorptrf32gmemalign16o2562561_tensorptrbf16gmemalig"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::CUDAFunctor_add<c1"
+   },
+   {
+    "op": "aten._fused_rms_norm.default",
+    "kernels": "kernel_cutlass_kernel_torch_vendorquackrmsnormRMSNorm_object_at__tensorptrbf16gm"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda"
+   },
+   {
+    "op": "aten.sort.stable",
+    "kernels": "Memcpy DtoD (Device -> Device) | Memset (Device)"
+   },
+   {
+    "op": "aten.floor_divide.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<2, at::native::BUnaryFunctor<long"
+   },
+   {
+    "op": "aten.gather.default",
+    "kernels": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, lo"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten.index.Tensor",
+    "kernels": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, lo"
+   },
+   {
+    "op": "aten.sigmoid.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cud"
+   },
+   {
+    "op": "aten.gather.default",
+    "kernels": "void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_sc"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.index.Tensor",
+    "kernels": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "Memset (Device) | void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.linalg_vector_norm.default",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::N"
+   },
+   {
+    "op": "aten.clamp_min.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespa"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.bitwise_not.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::bitwise_not_kernel"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::nati"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "Memset (Device) | void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.linalg_vector_norm.default",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::N"
+   },
+   {
+    "op": "aten.clamp_min.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespa"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<floa"
+   },
+   {
+    "op": "aten.sum.default",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.clamp_min.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::(anonymous namespace)::"
+   },
+   {
+    "op": "aten.reciprocal.default",
+    "kernels": "void at::native::unrolled_elementwise_kernel<at::native::reciprocal_kernel_cuda("
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<floa"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<floa"
+   },
+   {
+    "op": "aten.ones_like.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<floa"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::nati"
+   },
+   {
+    "op": "aten.neg.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::neg_kernel_cuda(at"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<floa"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.sum.dim_IntList",
+    "kernels": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::f"
+   },
+   {
+    "op": "aten.gt.Scalar",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::compare_scalar_ker"
+   },
+   {
+    "op": "aten.scalar_tensor.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>"
+   },
+   {
+    "op": "aten.where.self",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.sgn.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::sign_kernel_cuda(a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.add.Tensor",
+    "kernels": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<fl"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.div.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

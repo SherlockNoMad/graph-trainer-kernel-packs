@@ -1,0 +1,87 @@
+{
+ "id": "pattern_9ecac9669da356cb5f78a89903e3e56f3aaae96a66a441ee66fe95b8340af373/ar7jbmhmbgckq7vd7x7c2exq76ccj3jzy6s7u7sxlnp4qplkz463",
+ "signature": "def kernel_function(in0)",
+ "inputs": [
+  {
+   "shape": [129280, 7168],
+   "stride": [7168, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [129280, 7168],
+   "stride": [7168, 1],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  },
+  {
+   "shape": [1010, 56, 32, 16],
+   "stride": [28672, 512, 16, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [56, 1010, 32, 16],
+   "stride": [517120, 512, 16, 1],
+   "dtype": "float8_e8m0fnu",
+   "device": "cuda"
+  },
+  {
+   "shape": [7168, 129280],
+   "stride": [1, 7168],
+   "dtype": "float8_e4m3fn",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r025_i0",
+   "storages": [
+    {
+     "nbytes": 1853358080,
+     "generated": true
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [129280, 7168],
+     "stride": [7168, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_671b",
+  "region": "r025",
+  "calls": [
+   {
+    "name": "fusion_r025_i0",
+    "module": "lm_head",
+    "phase": "forward",
+    "measured_us": 430.6,
+    "ideal_us": 408.4
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "torchao.triton_to_mxfp8_32x32_swizzle_dim0_qdata_dim01_scale.default",
+    "kernels": "_mxfp8_32x32_qdata_dim01_scale_swizzle_kernel"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}

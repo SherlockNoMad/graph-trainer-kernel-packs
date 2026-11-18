@@ -1,0 +1,468 @@
+{
+ "id": "pattern_878b9b746603b753cb6d57557cb43931784e62658c363a8d144be350a9183ac8/dl4wx2qriwicdchd5r4bm6aj7wxbbjppemt6xkokfjvoxe3trtvi",
+ "signature": "def kernel_function(in0, in1, in2, in3)",
+ "inputs": [
+  {
+   "value": "N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N16 + N17 + N18 + N19 + N20 + N21 + N22 + N23 + N24 + N25 + N26 + N27 + N28 + N29 + N30 + N31", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"],
+   "stride": [1],
+   "dtype": "int64",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": ["N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9", 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [8, 2880],
+   "stride": [2880, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [2880, "N0 + N1 + N10 + N11 + N12 + N13 + N14 + N15 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9"],
+   "stride": [1, 2880],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r001_i0",
+   "storages": [
+    {
+     "nbytes": 524288,
+     "generated": false
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "value": 65536
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 2,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r001_i1",
+   "storages": [
+    {
+     "nbytes": 524288,
+     "generated": false
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "value": 65536
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 2,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r001_i2",
+   "storages": [
+    {
+     "nbytes": 524288,
+     "generated": false
+    },
+    {
+     "nbytes": 377487360,
+     "generated": true
+    },
+    {
+     "nbytes": 524288,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "value": 65536
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [65536, 2880],
+     "stride": [2880, 1],
+     "dtype": "bfloat16",
+     "storage": 1,
+     "offset": 0
+    },
+    {
+     "shape": [65536],
+     "stride": [1],
+     "dtype": "int64",
+     "storage": 2,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/gpt_oss_120b",
+  "region": "r001",
+  "calls": [
+   {
+    "name": "fusion_r001_i0",
+    "module": "layers.35.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14229.1,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i1",
+    "module": "layers.34.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14275.8,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i2",
+    "module": "layers.33.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14209.7,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i3",
+    "module": "layers.32.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14221.7,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i4",
+    "module": "layers.31.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14086.6,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i5",
+    "module": "layers.30.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14213.1,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i6",
+    "module": "layers.29.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14190.0,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i7",
+    "module": "layers.28.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14221.7,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i8",
+    "module": "layers.27.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14147.7,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i9",
+    "module": "layers.26.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14169.5,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i10",
+    "module": "layers.25.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14274.3,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i11",
+    "module": "layers.24.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14127.0,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i12",
+    "module": "layers.23.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14302.3,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i13",
+    "module": "layers.22.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14058.7,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i14",
+    "module": "layers.21.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14312.3,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i15",
+    "module": "layers.20.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14120.9,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i16",
+    "module": "layers.19.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14171.4,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i17",
+    "module": "layers.18.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14191.1,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i18",
+    "module": "layers.17.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14069.0,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i19",
+    "module": "layers.16.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14203.2,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i20",
+    "module": "layers.15.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14124.4,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i21",
+    "module": "layers.14.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14145.2,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i22",
+    "module": "layers.13.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14117.7,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i23",
+    "module": "layers.12.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14119.3,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i24",
+    "module": "layers.11.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14114.1,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i25",
+    "module": "layers.10.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14185.4,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i26",
+    "module": "layers.9.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14077.0,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i27",
+    "module": "layers.8.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14124.5,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i28",
+    "module": "layers.7.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14219.9,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i29",
+    "module": "layers.6.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14196.7,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i30",
+    "module": "layers.5.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14174.1,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i31",
+    "module": "layers.4.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14189.9,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i32",
+    "module": "layers.3.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14192.6,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i33",
+    "module": "layers.2.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14210.1,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i34",
+    "module": "layers.1.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14162.6,
+    "ideal_us": 108.9
+   },
+   {
+    "name": "fusion_r001_i35",
+    "module": "layers.0.feed_forward.routed_experts",
+    "phase": "backward",
+    "measured_us": 14176.3,
+    "ideal_us": 108.9
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten.arange.default",
+    "kernels": "void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arang"
+   },
+   {
+    "op": "aten.scatter_.src",
+    "kernels": "Memset (Device) | void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arang"
+   },
+   {
+    "op": "aten.index.Tensor",
+    "kernels": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, lo"
+   },
+   {
+    "op": "aten.new_zeros.default",
+    "kernels": "Memset (Device)"
+   },
+   {
+    "op": "aten.index_add.default",
+    "kernels": "Memcpy DtoD (Device -> Device) | Memset (Device)"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}
