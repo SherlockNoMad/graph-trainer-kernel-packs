@@ -1,0 +1,197 @@
+{
+ "id": "pattern_157215941e5f259a125f6454ea782064cba5d5ef9821b6ee441c921ad976c67d/aclkmyqyehk7tbc3bxi3nqp6juxowwqypwsntowoapc34obllkoj",
+ "signature": "def kernel_function(in0, in1)",
+ "inputs": [
+  {
+   "shape": [1, 16, 16384, 192],
+   "stride": [50331648, 192, 3072, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [16384, 1, 32],
+   "stride": [32, 32, 1],
+   "dtype": "complex64",
+   "device": "cuda"
+  }
+ ],
+ "outputs": [
+  {
+   "shape": [16384, 3072],
+   "stride": [3072, 1],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  },
+  {
+   "shape": [3072, 16384],
+   "stride": [1, 3072],
+   "dtype": "bfloat16",
+   "device": "cuda"
+  }
+ ],
+ "mutated_inputs": [],
+ "output_aliases": [null, null],
+ "gate": "bitwise",
+ "cases": [
+  {
+   "call": "fusion_r003_i0",
+   "storages": [
+    {
+     "nbytes": 100663296,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [1, 16, 16384, 192],
+     "stride": [50331648, 192, 3072, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 1, 32],
+     "stride": [32, 32, 1],
+     "dtype": "complex64",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r003_i1",
+   "storages": [
+    {
+     "nbytes": 100663296,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [1, 16, 16384, 192],
+     "stride": [50331648, 192, 3072, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 1, 32],
+     "stride": [32, 32, 1],
+     "dtype": "complex64",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  },
+  {
+   "call": "fusion_r003_i2",
+   "storages": [
+    {
+     "nbytes": 100663296,
+     "generated": true
+    },
+    {
+     "nbytes": 4194304,
+     "generated": false
+    }
+   ],
+   "inputs": [
+    {
+     "shape": [1, 16, 16384, 192],
+     "stride": [50331648, 192, 3072, 1],
+     "dtype": "bfloat16",
+     "storage": 0,
+     "offset": 0
+    },
+    {
+     "shape": [16384, 1, 32],
+     "stride": [32, 32, 1],
+     "dtype": "complex64",
+     "storage": 1,
+     "offset": 0
+    }
+   ]
+  }
+ ],
+ "source": {
+  "capture": "outputs/fusion_finder/dsv3_debug",
+  "region": "r003",
+  "calls": [
+   {
+    "name": "fusion_r003_i0",
+    "module": "layers.5.attention.rope",
+    "phase": "backward",
+    "measured_us": 282.6,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r003_i1",
+    "module": "layers.4.attention.rope",
+    "phase": "backward",
+    "measured_us": 281.2,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r003_i2",
+    "module": "layers.3.attention.rope",
+    "phase": "backward",
+    "measured_us": 281.7,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r003_i3",
+    "module": "layers.2.attention.rope",
+    "phase": "backward",
+    "measured_us": 281.9,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r003_i4",
+    "module": "layers.1.attention.rope",
+    "phase": "backward",
+    "measured_us": 283.0,
+    "ideal_us": 29.6
+   },
+   {
+    "name": "fusion_r003_i5",
+    "module": "layers.0.attention.rope",
+    "phase": "backward",
+    "measured_us": 281.6,
+    "ideal_us": 29.6
+   }
+  ],
+  "reference_kernels": [
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten.mul.Tensor",
+    "kernels": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<a"
+   },
+   {
+    "op": "aten._to_copy.default",
+    "kernels": "void at::native::vectorized_elementwise_kernel<8, at::native::converting_copy_ke"
+   },
+   {
+    "op": "aten.cat.default",
+    "kernels": "void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymo"
+   }
+  ]
+ },
+ "env": {
+  "gpu": "NVIDIA GB300",
+  "torch": "2.16.0.dev20261105+cu132",
+  "cuda": "13.2",
+  "deterministic": true,
+  "fill_uninitialized_memory": false
+ }
+}
